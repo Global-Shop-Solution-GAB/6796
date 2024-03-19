@@ -1,0 +1,3117 @@
+Program.Sub.ScreenSU.Start
+Gui.F_Timesheet..create
+Gui.F_Timesheet..caption("Timesheet Entry 6796 v.2022.08.04.00")
+Gui.F_Timesheet..size(20850,11130)
+Gui.F_Timesheet..minx(0)
+Gui.F_Timesheet..miny(0)
+Gui.F_Timesheet..position(0,0)
+Gui.F_Timesheet..event(UnLoad,f_timesheet_unload)
+Gui.F_Timesheet..forecolor(0)
+Gui.F_Timesheet..BackColor(-2147483633)
+Gui.F_Timesheet..mousepointer(0)
+Gui.F_Timesheet..MaxButton(False)
+Gui.F_Timesheet.dtpWeek.create(datepicker)
+Gui.F_Timesheet.dtpWeek.size(1935,285)
+Gui.F_Timesheet.dtpWeek.position(120,315)
+Gui.F_Timesheet.dtpWeek.event(Change,dtpweek_change)
+Gui.F_Timesheet.dtpWeek.defaultvalue("")
+Gui.F_Timesheet.dtpWeek.tabstop(True)
+Gui.F_Timesheet.dtpWeek.tabindex(1)
+Gui.F_Timesheet.gsfgTimesheet.create(GsGridControl)
+Gui.F_Timesheet.gsfgTimesheet.size(20400,8775)
+Gui.F_Timesheet.gsfgTimesheet.position(120,705)
+Gui.F_Timesheet.gsfgTimesheet.Event(RowCellClick,gsfgTimesheet_RowCellClick)
+Gui.F_Timesheet.gsfgTimesheet.Event(CellValueChanged,gsfgTimesheet_CellValueChanged)
+Gui.F_Timesheet.gsfgTimesheet.Anchor(15)
+Gui.F_Timesheet.cmdLockPostToGSS.create(button)
+Gui.F_Timesheet.cmdLockPostToGSS.caption("Lock/Post to GSS")
+Gui.F_Timesheet.cmdLockPostToGSS.size(1860,375)
+Gui.F_Timesheet.cmdLockPostToGSS.position(2955,10050)
+Gui.F_Timesheet.cmdLockPostToGSS.event(Click,cmdLockPostToGSS_Click)
+Gui.F_Timesheet.cmdLockPostToGSS.disableonclick(20)
+Gui.F_Timesheet.cmdLockPostToGSS.defaultvalue("")
+Gui.F_Timesheet.cmdLockPostToGSS.tabstop(True)
+Gui.F_Timesheet.cmdLockPostToGSS.tabindex(12)
+Gui.F_Timesheet.cmdLockPostToGSS.Anchor(6)
+Gui.F_Timesheet.cmdTemplate.create(button)
+Gui.F_Timesheet.cmdTemplate.caption("Template")
+Gui.F_Timesheet.cmdTemplate.size(960,375)
+Gui.F_Timesheet.cmdTemplate.position(120,10050)
+Gui.F_Timesheet.cmdTemplate.event(Click,cmdTemplate_Click)
+Gui.F_Timesheet.cmdTemplate.defaultvalue("")
+Gui.F_Timesheet.cmdTemplate.tabstop(True)
+Gui.F_Timesheet.cmdTemplate.tabindex(13)
+Gui.F_Timesheet.cmdTemplate.Anchor(6)
+Gui.F_Timesheet.cmdSave.create(button)
+Gui.F_Timesheet.cmdSave.caption("Save")
+Gui.F_Timesheet.cmdSave.size(960,375)
+Gui.F_Timesheet.cmdSave.position(120,9615)
+Gui.F_Timesheet.cmdSave.event(Click,cmdsave_click)
+Gui.F_Timesheet.cmdSave.defaultvalue("")
+Gui.F_Timesheet.cmdSave.tabstop(True)
+Gui.F_Timesheet.cmdSave.tabindex(11)
+Gui.F_Timesheet.cmdSave.Anchor(6)
+Gui.F_Timesheet.lblDate.create(label,"Select Week",True,1935,255,1,120,120,True,0,Arial,8,-2147483633,0)
+Gui.F_Timesheet.lblDate.defaultvalue("")
+Gui.F_Timesheet.cmdRefresh.create(button)
+Gui.F_Timesheet.cmdRefresh.caption("Refresh")
+Gui.F_Timesheet.cmdRefresh.size(855,375)
+Gui.F_Timesheet.cmdRefresh.position(2115,255)
+Gui.F_Timesheet.cmdRefresh.event(Click,cmdrefresh_click)
+Gui.F_Timesheet.cmdRefresh.disableonclick(20)
+Gui.F_Timesheet.cmdRefresh.defaultvalue("")
+Gui.F_Timesheet.cmdRefresh.tabstop(True)
+Gui.F_Timesheet.cmdRefresh.tabindex(2)
+Gui.F_Timesheet.txtAJob.create(textbox,"",True,1050,300,0,3480,300,True,0,Arial,8,-2147483643,1)
+Gui.F_Timesheet.txtAJob.defaultvalue("")
+Gui.F_Timesheet.txtAJob.MaxLength(6)
+Gui.F_Timesheet.txtAJob.TabStop(True)
+Gui.F_Timesheet.txtAJob.TabIndex(3)
+Gui.F_Timesheet.txtASuff.create(textbox,"",True,570,300,0,4635,300,True,0,Arial,8,-2147483643,1)
+Gui.F_Timesheet.txtASuff.defaultvalue("")
+Gui.F_Timesheet.txtASuff.MaxLength(3)
+Gui.F_Timesheet.txtASuff.TabStop(True)
+Gui.F_Timesheet.txtASuff.TabIndex(4)
+Gui.F_Timesheet.cmdBrowseJob.create(button)
+Gui.F_Timesheet.cmdBrowseJob.caption("^")
+Gui.F_Timesheet.cmdBrowseJob.size(345,375)
+Gui.F_Timesheet.cmdBrowseJob.position(5310,255)
+Gui.F_Timesheet.cmdBrowseJob.event(Click,cmdBrowseJob_Click)
+Gui.F_Timesheet.cmdBrowseJob.defaultvalue("")
+Gui.F_Timesheet.txtASeq.create(textbox,"",True,765,300,0,5865,300,True,0,Arial,8,-2147483643,1)
+Gui.F_Timesheet.txtASeq.defaultvalue("")
+Gui.F_Timesheet.txtASeq.MaxLength(6)
+Gui.F_Timesheet.txtASeq.TabStop(True)
+Gui.F_Timesheet.txtASeq.TabIndex(5)
+Gui.F_Timesheet.cmdSeqBrowser.create(button)
+Gui.F_Timesheet.cmdSeqBrowser.caption("^")
+Gui.F_Timesheet.cmdSeqBrowser.size(345,375)
+Gui.F_Timesheet.cmdSeqBrowser.position(6750,270)
+Gui.F_Timesheet.cmdSeqBrowser.event(Click,cmdSeqBrowser_Click)
+Gui.F_Timesheet.cmdSeqBrowser.defaultvalue("")
+Gui.F_Timesheet.lblASeq.create(label,"Sequence",True,870,255,1,5865,105,True,0,Arial,8,-2147483633,0)
+Gui.F_Timesheet.lblASeq.defaultvalue("")
+Gui.F_Timesheet.lblASuff.create(label,"Suffix",True,600,255,1,4635,105,True,0,Arial,8,-2147483633,0)
+Gui.F_Timesheet.lblASuff.defaultvalue("")
+Gui.F_Timesheet.lblAJob.create(label,"Job",True,735,255,1,3480,105,True,0,Arial,8,-2147483633,0)
+Gui.F_Timesheet.lblAJob.defaultvalue("")
+Gui.F_Timesheet.cmdAdd.create(button)
+Gui.F_Timesheet.cmdAdd.caption("Add")
+Gui.F_Timesheet.cmdAdd.size(1665,375)
+Gui.F_Timesheet.cmdAdd.position(8295,270)
+Gui.F_Timesheet.cmdAdd.event(Click,cmdadd_click)
+Gui.F_Timesheet.cmdAdd.disableonclick(20)
+Gui.F_Timesheet.cmdAdd.defaultvalue("")
+Gui.F_Timesheet.cmdAdd.tabstop(True)
+Gui.F_Timesheet.cmdAdd.tabindex(7)
+Gui.F_Timesheet.cmdReadyForApproval.create(button)
+Gui.F_Timesheet.cmdReadyForApproval.caption("Ready for Approval")
+Gui.F_Timesheet.cmdReadyForApproval.size(1710,375)
+Gui.F_Timesheet.cmdReadyForApproval.position(1170,10050)
+Gui.F_Timesheet.cmdReadyForApproval.event(Click,cmdReadyForApproval_Click)
+Gui.F_Timesheet.cmdReadyForApproval.defaultvalue("")
+Gui.F_Timesheet.cmdReadyForApproval.TabStop(True)
+Gui.F_Timesheet.cmdReadyForApproval.TabIndex(14)
+Gui.F_Timesheet.cmdReadyForApproval.Anchor(6)
+Gui.F_Timesheet.cmdPrint.create(button)
+Gui.F_Timesheet.cmdPrint.caption("Print")
+Gui.F_Timesheet.cmdPrint.size(885,375)
+Gui.F_Timesheet.cmdPrint.position(1170,9630)
+Gui.F_Timesheet.cmdPrint.event(Click,cmdprint_click)
+Gui.F_Timesheet.cmdPrint.defaultvalue("")
+Gui.F_Timesheet.cmdPrint.Anchor(6)
+Gui.F_Timesheet.cmdPrint.Enabled(False)
+Gui.F_Timesheet.txtEmployee.create(textbox,"",True,1020,300,0,12270,300,True,0,Arial,8,-2147483643,1)
+Gui.F_Timesheet.txtEmployee.maxLength(5)
+Gui.F_Timesheet.txtEmployee.defaultvalue("")
+Gui.F_Timesheet.txtEmployee.Event(LostFocus,txtEmployee_Change)
+Gui.F_Timesheet.txtEmployee.TabStop(True)
+Gui.F_Timesheet.txtEmployee.TabIndex(8)
+Gui.F_Timesheet.lblEmp.create(label,"Employee",True,975,255,1,12300,105,True,0,Arial,8,-2147483633,0)
+Gui.F_Timesheet.lblEmp.defaultvalue("")
+Gui.F_Timesheet.cmdEmployeeBrowser.create(button)
+Gui.F_Timesheet.cmdEmployeeBrowser.caption("^")
+Gui.F_Timesheet.cmdEmployeeBrowser.size(465,375)
+Gui.F_Timesheet.cmdEmployeeBrowser.position(13380,270)
+Gui.F_Timesheet.cmdEmployeeBrowser.event(Click,cmdEmployeeBrowser_Click)
+Gui.F_Timesheet.cmdEmployeeBrowser.defaultvalue("")
+Gui.F_Timesheet.cmdRefreshEmpSearch.create(button)
+Gui.F_Timesheet.cmdRefreshEmpSearch.caption("Refresh")
+Gui.F_Timesheet.cmdRefreshEmpSearch.size(1095,420)
+Gui.F_Timesheet.cmdRefreshEmpSearch.position(15225,225)
+Gui.F_Timesheet.cmdRefreshEmpSearch.event(Click,cmdRefreshEmpSearch_Click)
+Gui.F_Timesheet.cmdRefreshEmpSearch.defaultvalue("")
+Gui.F_Timesheet.cmdRefreshEmpSearch.TabStop(True)
+Gui.F_Timesheet.cmdRefreshEmpSearch.TabIndex(9)
+Gui.F_Timesheet.cmdUnlock.create(button)
+Gui.F_Timesheet.cmdUnlock.caption("Unlock")
+Gui.F_Timesheet.cmdUnlock.size(855,375)
+Gui.F_Timesheet.cmdUnlock.position(4890,10050)
+Gui.F_Timesheet.cmdUnlock.event(Click,cmdunlock_click)
+Gui.F_Timesheet.cmdUnlock.defaultvalue("")
+Gui.F_Timesheet.cmdUnlock.TabStop(True)
+Gui.F_Timesheet.cmdUnlock.TabIndex(15)
+Gui.F_Timesheet.cmdUnlock.Anchor(6)
+Gui.F_Timesheet.chkUpdateAllEmployees.create(checkbox)
+Gui.F_Timesheet.chkUpdateAllEmployees.caption("Update All Employees")
+Gui.F_Timesheet.chkUpdateAllEmployees.size(2115,255)
+Gui.F_Timesheet.chkUpdateAllEmployees.position(5850,10125)
+Gui.F_Timesheet.chkUpdateAllEmployees.tooltip("Upload all employee times that are marked as Ready.")
+Gui.F_Timesheet.chkUpdateAllEmployees.defaultvalue("")
+Gui.F_Timesheet.chkUpdateAllEmployees.TabStop(True)
+Gui.F_Timesheet.chkUpdateAllEmployees.TabIndex(16)
+Gui.F_Timesheet.chkUpdateAllEmployees.Anchor(6)
+Gui.F_Timesheet.txtUser.create(textbox,"",True,1020,300,1,14040,300,False,0,Arial,8,-2147483643,1)
+Gui.F_Timesheet.txtUser.maxLength(10)
+Gui.F_Timesheet.txtUser.defaultvalue("")
+Gui.F_Timesheet.txtUser.TabStop(True)
+Gui.F_Timesheet.txtUser.TabIndex(10)
+Gui.F_Timesheet.lblUser.create(label,"User",True,540,255,0,14040,105,True,0,Arial,8,-2147483633,0)
+Gui.F_Timesheet.lblUser.defaultvalue("")
+Gui.F_Timesheet.lblASeq2.Create(Label,"Work Center",True,1050,255,1,7290,120,True,0,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblASeq2.DefaultValue("")
+Gui.F_Timesheet.txtWC.Create(TextBox,"",True,765,300,0,7320,300,False,0,"Arial",8,-2147483643,1)
+Gui.F_Timesheet.txtWC.DefaultValue("")
+Gui.F_Timesheet.txtWC.MaxLength(4)
+Gui.F_Timesheet.txtWC.TabStop(True)
+Gui.F_Timesheet.txtWC.TabIndex(6)
+Gui.F_Timesheet.lbl1.Create(Label,"Sun Hrs",True,1095,255,0,17685,10260,True,2,"Arial",10,-2147483633,0)
+Gui.F_Timesheet.lbl1.Anchor(10)
+Gui.F_Timesheet.txtSunHrs.Create(TextBox,"",True,1095,300,0,17685,9585,True,1,"Arial",8,-2147483626,1)
+Gui.F_Timesheet.txtSunHrs.Locked(True)
+Gui.F_Timesheet.txtSunHrs.ForeColor(0)
+Gui.F_Timesheet.txtSunHrs.Anchor(10)
+Gui.F_Timesheet.lbl2.Create(Label,"Mon Hrs",True,1155,255,0,10860,10260,True,2,"Arial",10,-2147483633,0)
+Gui.F_Timesheet.lbl2.Anchor(10)
+Gui.F_Timesheet.lbl3.Create(Label,"Tues Hrs",True,1095,255,0,12045,10260,True,2,"Arial",10,-2147483633,0)
+Gui.F_Timesheet.lbl3.Anchor(10)
+Gui.F_Timesheet.lbl4.Create(Label,"Wed Hrs",True,1110,255,0,13170,10260,True,2,"Arial",10,-2147483633,0)
+Gui.F_Timesheet.lbl4.Anchor(10)
+Gui.F_Timesheet.lbl5.Create(Label,"Thur Hrs",True,1065,255,0,14310,10260,True,2,"Arial",10,-2147483633,0)
+Gui.F_Timesheet.lbl5.Anchor(10)
+Gui.F_Timesheet.lbl6.Create(Label,"Fri Hrs",True,1065,255,0,15405,10260,True,2,"Arial",10,-2147483633,0)
+Gui.F_Timesheet.lbl6.Anchor(10)
+Gui.F_Timesheet.lbl7.Create(Label,"Sat Hrs",True,1155,255,0,16500,10260,True,2,"Arial",10,-2147483633,0)
+Gui.F_Timesheet.lbl7.Anchor(10)
+Gui.F_Timesheet.lbl8.Create(Label,"Total Hrs",True,1155,255,0,18810,10260,True,2,"Arial",10,-2147483633,0)
+Gui.F_Timesheet.lbl8.FontStyle(True,False,False,False,False)
+Gui.F_Timesheet.lbl8.Anchor(10)
+Gui.F_Timesheet.txtFriHrs.Create(TextBox,"",True,1065,300,0,15405,9585,True,1,"Arial",8,-2147483626,1)
+Gui.F_Timesheet.txtFriHrs.ForeColor(0)
+Gui.F_Timesheet.txtFriHrs.Locked(True)
+Gui.F_Timesheet.txtFriHrs.Anchor(10)
+Gui.F_Timesheet.txtThurHrs.Create(TextBox,"",True,1065,300,0,14310,9585,True,1,"Arial",8,-2147483626,1)
+Gui.F_Timesheet.txtThurHrs.ForeColor(0)
+Gui.F_Timesheet.txtThurHrs.Locked(True)
+Gui.F_Timesheet.txtThurHrs.Anchor(10)
+Gui.F_Timesheet.txtWedHrs.Create(TextBox,"",True,1110,300,0,13170,9585,True,1,"Arial",8,-2147483626,1)
+Gui.F_Timesheet.txtWedHrs.ForeColor(0)
+Gui.F_Timesheet.txtWedHrs.Locked(True)
+Gui.F_Timesheet.txtWedHrs.Anchor(10)
+Gui.F_Timesheet.txtTuesHrs.Create(TextBox,"",True,1095,300,0,12045,9585,True,1,"Arial",8,-2147483626,1)
+Gui.F_Timesheet.txtTuesHrs.ForeColor(0)
+Gui.F_Timesheet.txtTuesHrs.Locked(True)
+Gui.F_Timesheet.txtTuesHrs.Anchor(10)
+Gui.F_Timesheet.txtMonHrs.Create(TextBox,"",True,1155,300,0,10860,9585,True,1,"Arial",8,-2147483626,1)
+Gui.F_Timesheet.txtMonHrs.ForeColor(0)
+Gui.F_Timesheet.txtMonHrs.Locked(True)
+Gui.F_Timesheet.txtMonHrs.Anchor(10)
+Gui.F_Timesheet.txtSatHrs.Create(TextBox,"",True,1155,300,0,16500,9585,True,1,"Arial",8,-2147483626,1)
+Gui.F_Timesheet.txtSatHrs.ForeColor(0)
+Gui.F_Timesheet.txtSatHrs.Locked(True)
+Gui.F_Timesheet.txtSatHrs.Anchor(10)
+Gui.F_Timesheet.txtTotHrs.Create(TextBox,"",True,1155,300,0,18810,9585,True,1,"Arial",8,-2147483626,1)
+Gui.F_Timesheet.txtTotHrs.ForeColor(0)
+Gui.F_Timesheet.txtTotHrs.Locked(True)
+Gui.F_Timesheet.txtTotHrs.Anchor(10)
+Gui.F_Timesheet.cmdAddFromTemplate.Create(Button)
+Gui.F_Timesheet.cmdAddFromTemplate.Size(1770,375)
+Gui.F_Timesheet.cmdAddFromTemplate.Position(10230,270)
+Gui.F_Timesheet.cmdAddFromTemplate.TabStop(True)
+Gui.F_Timesheet.cmdAddFromTemplate.TabIndex(7)
+Gui.F_Timesheet.cmdAddFromTemplate.Caption("Add From Template")
+Gui.F_Timesheet.cmdAddFromTemplate.DisableOnClick(20)
+Gui.F_Timesheet.cmdAddFromTemplate.DefaultValue("")
+Gui.F_Timesheet.cmdAddFromTemplate.Event(Click,cmdAddFromTemplate_Click)
+Gui.F_Timesheet.lblClockHrsMon.Create(Label,"Clock Hrs.",True,1155,255,0,10860,9990,False,1,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblClockHrsMon.Anchor(10)
+Gui.F_Timesheet.lblClockHrsMon.FontStyle(False,True,False,False,False)
+Gui.F_Timesheet.lblClockHrsTues.Create(Label,"Clock Hrs.",True,1080,255,0,12045,9990,False,1,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblClockHrsTues.Anchor(10)
+Gui.F_Timesheet.lblClockHrsTues.FontStyle(False,True,False,False,False)
+Gui.F_Timesheet.lblClockHrsWed.Create(Label,"Clock Hrs.",True,1110,255,0,13170,9990,False,1,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblClockHrsWed.Anchor(10)
+Gui.F_Timesheet.lblClockHrsWed.FontStyle(False,True,False,False,False)
+Gui.F_Timesheet.lblClockHrsThur.Create(Label,"Clock Hrs.",True,1065,255,0,14310,9990,False,1,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblClockHrsThur.Anchor(10)
+Gui.F_Timesheet.lblClockHrsThur.FontStyle(False,True,False,False,False)
+Gui.F_Timesheet.lblClockHrsFri.Create(Label,"Clock Hrs.",True,1065,255,0,15405,9990,False,1,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblClockHrsFri.Anchor(10)
+Gui.F_Timesheet.lblClockHrsFri.FontStyle(False,True,False,False,False)
+Gui.F_Timesheet.lblClockHrsSat.Create(Label,"Clock Hrs.",True,1155,255,0,16500,9990,False,1,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblClockHrsSat.Anchor(10)
+Gui.F_Timesheet.lblClockHrsSat.FontStyle(False,True,False,False,False)
+Gui.F_Timesheet.lblClockHrsSun.Create(Label,"Clock Hrs.",True,1095,255,0,17685,9990,False,1,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblClockHrsSun.Anchor(10)
+Gui.F_Timesheet.lblClockHrsSun.FontStyle(False,True,False,False,False)
+Gui.F_Timesheet.lblClockHrsTotal.Create(Label,"Clock Hrs.",True,1155,255,0,18810,9990,False,1,"Arial",8,-2147483633,0)
+Gui.F_Timesheet.lblClockHrsTotal.Anchor(10)
+Gui.F_Timesheet.lblClockHrsTotal.FontStyle(False,True,False,False,False)
+Gui.F_Timesheet.frTop.Create(Frame)
+Gui.F_Timesheet.frTop.Size(3045,555)
+Gui.F_Timesheet.frTop.Position(17460,105)
+Gui.F_Timesheet.frTop.Anchor(9)
+Gui.F_Timesheet.optNormalTime.Create(Option)
+Gui.F_Timesheet.optNormalTime.Size(1335,255)
+Gui.F_Timesheet.optNormalTime.Position(180,180)
+Gui.F_Timesheet.optNormalTime.Anchor(9)
+Gui.F_Timesheet.optNormalTime.Caption("Normal Time")
+Gui.F_Timesheet.optNormalTime.Event(Click,optNormalTime_Click)
+Gui.F_Timesheet.optNormalTime.Parent("frTop")
+Gui.F_Timesheet.optDecimalTime.Create(Option)
+Gui.F_Timesheet.optDecimalTime.Size(1335,255)
+Gui.F_Timesheet.optDecimalTime.Position(1620,180)
+Gui.F_Timesheet.optDecimalTime.Anchor(9)
+Gui.F_Timesheet.optDecimalTime.Caption("Decimal Time")
+Gui.F_Timesheet.optDecimalTime.Event(Click,optDecimalTime_Click)
+Gui.F_Timesheet.optDecimalTime.Parent("frTop")
+Gui.F_Template..create
+Gui.F_Template..caption("Template Entry")
+Gui.F_Template..size(5640,7380)
+Gui.F_Template..minx(0)
+Gui.F_Template..miny(0)
+Gui.F_Template..position(0,0)
+Gui.F_Template..event(UnLoad,f_template_unload)
+Gui.F_Template..forecolor(0)
+Gui.F_Template..BackColor(-2147483633)
+Gui.F_Template..maxbutton(False)
+Gui.F_Template..mousepointer(0)
+Gui.F_Template..sizeable(False)
+Gui.F_Template.lblJob.create(label,"Job",True,660,255,1,125,155,True,0,Arial,8,-2147483633,0)
+Gui.F_Template.lblJob.defaultvalue("")
+Gui.F_Template.txtTmpJob.create(textbox,"",True,1050,300,0,105,375,True,0,Arial,8,-2147483643,1)
+Gui.F_Template.txtTmpJob.defaultvalue("")
+Gui.F_Template.txtTmpJob.TabStop(True)
+Gui.F_Template.txtTmpJob.TabIndex(1)
+Gui.F_Template.lblSuff.create(label,"Suffix",True,645,255,1,1275,150,True,0,Arial,8,-2147483633,0)
+Gui.F_Template.lblSuff.defaultvalue("")
+Gui.F_Template.txtTmpSuff.create(textbox,"",True,570,300,0,1275,375,True,0,Arial,8,-2147483643,1)
+Gui.F_Template.txtTmpSuff.defaultvalue("")
+Gui.F_Template.txtTmpSuff.TabStop(True)
+Gui.F_Template.txtTmpSuff.TabIndex(2)
+Gui.F_Template.cmdTmpJobBrows.create(button)
+Gui.F_Template.cmdTmpJobBrows.caption("^")
+Gui.F_Template.cmdTmpJobBrows.size(345,375)
+Gui.F_Template.cmdTmpJobBrows.position(1965,345)
+Gui.F_Template.cmdTmpJobBrows.event(Click,cmdtmpjobbrows_click)
+Gui.F_Template.cmdTmpJobBrows.defaultvalue("")
+Gui.F_Template.cmdTmpJobBrows.TabStop(True)
+Gui.F_Template.cmdTmpJobBrows.TabIndex(3)
+Gui.F_Template.lblSeq.create(label,"Sequence",True,1185,255,1,2580,150,True,0,Arial,8,-2147483633,0)
+Gui.F_Template.lblSeq.defaultvalue("")
+Gui.F_Template.txtTmpSeq.create(textbox,"",True,765,300,0,2580,375,True,0,Arial,8,-2147483643,1)
+Gui.F_Template.txtTmpSeq.defaultvalue("")
+Gui.F_Template.txtTmpSeq.TabStop(True)
+Gui.F_Template.txtTmpSeq.TabIndex(4)
+Gui.F_Template.cmdTmpSeqBrows.create(button)
+Gui.F_Template.cmdTmpSeqBrows.caption("^")
+Gui.F_Template.cmdTmpSeqBrows.size(345,375)
+Gui.F_Template.cmdTmpSeqBrows.position(3480,345)
+Gui.F_Template.cmdTmpSeqBrows.event(Click,cmdtmpseqbrows_click)
+Gui.F_Template.cmdTmpSeqBrows.defaultvalue("")
+Gui.F_Template.cmdTmpSeqBrows.TabStop(True)
+Gui.F_Template.cmdTmpSeqBrows.TabIndex(5)
+Gui.F_Template.cmdTmpAdd.create(button)
+Gui.F_Template.cmdTmpAdd.caption("Add")
+Gui.F_Template.cmdTmpAdd.size(855,375)
+Gui.F_Template.cmdTmpAdd.position(105,825)
+Gui.F_Template.cmdTmpAdd.event(Click,cmdtmpadd_click)
+Gui.F_Template.cmdTmpAdd.defaultvalue("")
+Gui.F_Template.cmdTmpAdd.TabStop(True)
+Gui.F_Template.cmdTmpAdd.TabIndex(8)
+Gui.F_Template.cmdTmpDelete.create(button)
+Gui.F_Template.cmdTmpDelete.caption("Delete")
+Gui.F_Template.cmdTmpDelete.size(855,375)
+Gui.F_Template.cmdTmpDelete.position(1065,810)
+Gui.F_Template.cmdTmpDelete.event(Click,cmdtmpdelete_click)
+Gui.F_Template.cmdTmpDelete.defaultvalue("")
+Gui.F_Template.cmdTmpDelete.TabStop(True)
+Gui.F_Template.cmdTmpDelete.TabIndex(9)
+Gui.F_Template.lvwTemp.create(listview)
+Gui.F_Template.lvwTemp.view(3)
+Gui.F_Template.lvwTemp.addlistviewcolumn("Job",915,0)
+Gui.F_Template.lvwTemp.addlistviewcolumn("Suffix",660,0)
+Gui.F_Template.lvwTemp.addlistviewcolumn("Seq",1000,0)
+Gui.F_Template.lvwTemp.addlistviewcolumn("WC",660,0)
+Gui.F_Template.lvwTemp.addlistviewcolumn("Description",2115,0)
+Gui.F_Template.lvwTemp.size(5355,5055)
+Gui.F_Template.lvwTemp.position(75,1305)
+Gui.F_Template.lvwTemp.event(ItemClick,lvwtemp_itemclick)
+Gui.F_Template.cmdTmpDeleteAll.create(button)
+Gui.F_Template.cmdTmpDeleteAll.caption("Delete All")
+Gui.F_Template.cmdTmpDeleteAll.size(1395,345)
+Gui.F_Template.cmdTmpDeleteAll.position(90,6450)
+Gui.F_Template.cmdTmpDeleteAll.event(Click,cmdtmpdeleteall_click)
+Gui.F_Template.cmdTmpDeleteAll.defaultvalue("")
+Gui.F_Template.cmdTmpDeleteAll.TabStop(True)
+Gui.F_Template.cmdTmpDeleteAll.TabIndex(10)
+Gui.F_Template.cmdTmpWC.Create(Button)
+Gui.F_Template.cmdTmpWC.Size(345,375)
+Gui.F_Template.cmdTmpWC.Position(5025,330)
+Gui.F_Template.cmdTmpWC.Caption("^")
+Gui.F_Template.cmdTmpWC.DefaultValue("")
+Gui.F_Template.cmdTmpWC.Event(Click,cmdTmpAddWC_Click)
+Gui.F_Template.cmdTmpWC.TabStop(True)
+Gui.F_Template.cmdTmpWC.TabIndex(7)
+Gui.F_Template.txtTmpWC.Create(TextBox,"",True,765,300,0,4110,375,True,0,"Arial",8,-2147483643,1)
+Gui.F_Template.txtTmpWC.DefaultValue("")
+Gui.F_Template.txtTmpWC.TabStop(True)
+Gui.F_Template.txtTmpWC.TabIndex(6)
+Gui.F_Template.lblSeq2.Create(Label,"Workcenter",True,1185,255,1,4050,150,True,0,"Arial",8,-2147483633,0)
+Gui.F_Template.lblSeq2.DefaultValue("")
+Gui.fLogin..Create
+Gui.fLogin..Caption("Time Sheet Login")
+Gui.fLogin..Size(4395,2280)
+Gui.fLogin..MinX(0)
+Gui.fLogin..MinY(0)
+Gui.fLogin..Position(0,0)
+Gui.fLogin..BackColor(-2147483633)
+Gui.fLogin..MousePointer(0)
+Gui.fLogin..Event(UnLoad,fLogin_UnLoad)
+Gui.fLogin.lbl1.Create(Label,"User Name :",True,1560,255,0,270,300,True,0,"Arial",12,-2147483633,0)
+Gui.fLogin.txtUser.Create(TextBox,"",True,1680,390,0,2130,165,True,0,"Arial",12,-2147483643,1)
+Gui.fLogin.txtUser.MaxLength(8)
+Gui.fLogin.txtUser.Mask(">")
+Gui.fLogin.lbl2.Create(Label,"Password : ",True,1605,255,0,270,720,True,0,"Arial",12,-2147483633,0)
+Gui.fLogin.txtPassword.Create(TextBox,"",True,1680,390,0,2130,585,True,0,"Arial",12,-2147483643,1)
+Gui.fLogin.txtPassword.PasswordChar("***********")
+Gui.fLogin.cmdSignIn.Create(Button)
+Gui.fLogin.cmdSignIn.Size(3555,450)
+Gui.fLogin.cmdSignIn.Position(270,1125)
+Gui.fLogin.cmdSignIn.Caption("Sign In")
+Gui.fLogin.cmdSignIn.FontSize(12)
+Gui.fLogin.cmdSignIn.Event(Click,cmdSignIn_Click)
+Gui.fLogin.lblUsrName.Create(Label,"!",False,240,330,0,3870,255,True,0,"Arial",12,-2147483633,0)
+Gui.fLogin.lblUsrName.ForeColor(255)
+Gui.fLogin.lblPassWord.Create(Label,"!",False,240,330,0,3870,660,True,0,"Arial",12,-2147483633,0)
+Gui.fLogin.lblPassWord.ForeColor(255)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.sMessageBoxReturn.Declare
+v.Global.dDate.Declare
+v.Global.sDetl.Declare
+v.Global.sTA.Declare
+v.Global.iChk.Declare
+v.Global.iRun.Declare
+v.Global.sUser.Declare
+v.Global.bAdminMode.Declare
+v.Global.iBIRUNID.Declare
+v.Global.iLogID.Declare
+v.Global.bSaveMsg.Declare
+v.Global.bReady.Declare
+v.Global.sTime.Declare
+Program.External.Include.Library("JB0455.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'BN, June, July, Aug 2022
+'This project is a modification of project 5114.
+f.Intrinsic.Control.Try
+	v.Local.sSql.Declare
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+	'Script 2 button at GUI
+	f.Intrinsic.Control.If(v.Caller.Hook,=,15710)		
+		Variable.Passed.000020.Set("Timesheet")
+		
+	'Script 2 button execute at GUI	
+	f.Intrinsic.Control.Elseif(v.Caller.Hook,=,15770)		
+		'Get all users
+		f.Intrinsic.string.build("Select Distinct rtrim(UPPER(GS_USER)) as GS_USER from USER_INFORMATION where company = '{0}' or company_specific = 0",v.caller.CompanyCode,v.Local.sSql)
+		f.ODBC.Connection!conx.OpenCommonConnection
+		f.Data.DataTable.CreateFromSQL("USERDT","CONX",v.Local.sSql,true)	
+		f.ODBC.Connection!conx.Close		
+		f.Data.DataView.Create("USERDT","USERVw",22)
+		'Get user and validate
+		F.Intrinsic.Control.CallSub(GetGSUserFromWindowsUser,"WindowsUser",V.System.UserName)
+		'Cannot determine User, ask them to log in
+		F.Intrinsic.Control.If(V.Args.GSUser.Trim,=,"")
+			'Ask to login
+			f.Intrinsic.Control.CallSub(CheckTable)
+			gui.fLogin..Show
+		F.Intrinsic.Control.Else
+			'User is determined
+			V.Global.sUser.Set(V.Args.GSUser.Trim)
+			v.Global.sUser.Set(v.Global.sUser.UCase)
+			f.Intrinsic.Control.CallSub(CheckTable)
+			f.Intrinsic.Control.CallSub(PostSignIn)
+		F.Intrinsic.Control.EndIf
+	
+	'Launch from a menu item
+	f.Intrinsic.Control.Else
+		'Show		
+		f.Intrinsic.Control.CallSub(CheckTable)		
+		f.Intrinsic.Control.CallSub(PostSignIn)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Catching.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+	F.Intrinsic.String.Build("Project: {5} {0}Subroutine: {1}{0}Error Occurred {2} with description {3}{0}GAB Version: {4}",V.Ambient.Newline,V.Args.SUB,V.Args.errorno,V.Args.errordesc,V.Ambient.GABVersion,v.Caller.ScriptFile,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	
+	f.Intrinsic.Control.CallSub(Unload)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry
+Program.Sub.Catching.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.Try	
+
+	f.Intrinsic.Control.If(v.ODBC.conx.Exists)
+		F.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.ODBC.con.Exists)
+		F.ODBC.Connection!con.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.ODBC.com.Exists)
+		F.ODBC.Connection!com.Close
+	f.Intrinsic.Control.EndIf	
+	
+	F.Intrinsic.Control.End 
+	
+f.Intrinsic.Control.Catch
+	F.Intrinsic.Control.End 
+f.Intrinsic.Control.EndTry	
+Program.Sub.Unload.End
+
+Program.Sub.CheckTable.Start
+F.Intrinsic.Control.Try
+	V.Local.bRet.Declare
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	F.ODBC.Connection!conx.TableExists("GCG_6796_TIMSHT",v.Local.bRet)
+	F.Intrinsic.Control.If(v.Local.bRet.Not)
+		F.ODBC.Connection!conx.Execute("CREATE TABLE GCG_6796_TIMSHT( USER_ID CHAR(8), JOB CHAR(6), SUFFIX CHAR(3), SEQ CHAR(6), WC CHAR(4), BEG_WEEK DATE, SUN_HRS DOUBLE DEFAULT '0', SUN_NOTES LONGVARCHAR CASE, MON_HRS DOUBLE DEFAULT '0', MON_NOTES LONGVARCHAR CASE, TUES_HRS DOUBLE DEFAULT '0', TUES_NOTES LONGVARCHAR CASE, WED_HRS DOUBLE DEFAULT '0', WED_NOTES LONGVARCHAR CASE, THUR_HRS DOUBLE DEFAULT '0', THUR_NOTES LONGVARCHAR CASE, FRI_HRS DOUBLE DEFAULT '0', FRI_NOTES LONGVARCHAR CASE, SAT_HRS DOUBLE DEFAULT '0', SAT_NOTES LONGVARCHAR CASE, UPDATED BIT DEFAULT '0' NOT NULL, FLAG_READY BIT DEFAULT '0' NOT NULL );")
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!conx.TableExists("GCG_6796_TIMESHT_BI",v.Local.bRet)
+	F.Intrinsic.Control.If(v.Local.bRet.Not)
+		F.ODBC.Connection!conx.Execute("CREATE TABLE GCG_6796_TIMESHT_BI ( BIRUNID BIGINT DEFAULT '0', EMPLOYEE CHAR(5), NAME CHAR(30), JOB CHAR(6), SUFFIX CHAR(3), SEQUENCE CHAR(6), WC CHAR(4), DESCRIPTION CHAR(50), SUN_HRS DOUBLE DEFAULT '0', SUN_NOTES LONGVARCHAR CASE, MON_HRS DOUBLE DEFAULT '0', MON_NOTES LONGVARCHAR CASE, TUES_HRS DOUBLE DEFAULT '0', TUES_NOTES LONGVARCHAR CASE, WED_HRS DOUBLE DEFAULT '0', WED_NOTES LONGVARCHAR CASE, THUR_HRS DOUBLE DEFAULT '0', THU_NOTES LONGVARCHAR CASE, FRI_HRS DOUBLE DEFAULT '0', FRI_NOTES LONGVARCHAR CASE, SAT_HRS DOUBLE DEFAULT '0', SAT_NOTES LONGVARCHAR );")
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!conx.TableExists("GCG_6796_TIMSHT_TEMP",v.Local.bRet)
+	F.Intrinsic.Control.If(v.Local.bRet.Not)
+		F.ODBC.Connection!conx.Execute("CREATE TABLE GCG_6796_TIMSHT_TEMP ( USER_ID CHAR(8), JOB CHAR(6), SUFFIX CHAR(3), SEQ CHAR(6), WC CHAR(4) );")
+	F.Intrinsic.Control.EndIf	
+	
+	f.ODBC.Connection!conx.Close		
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.CheckTable.End
+
+Program.Sub.fLogin_UnLoad.Start
+f.Intrinsic.Control.CallSub(Unload)
+Program.Sub.fLogin_UnLoad.End
+
+Program.Sub.GetGSUserFromWindowsUser.Start
+'check the windows user when launched from the GUI. If there is a GS User tied to that open the timesheet for them
+'Otherwise they need to sign in
+F.Intrinsic.Control.Try		
+	V.Local.sWindowsUser.Declare
+	V.Local.sGSUser.Declare
+	V.Local.sSQL.Declare
+	V.Local.bInString.Declare
+	V.Local.sMessage.Declare
+	V.Local.sSplit.Declare
+	
+	V.Local.sWindowsUser.Set(V.Args.WindowsUser.Trim)
+	F.Intrinsic.String.Build("select USER_ID from USER_SECURITY where Rtrim(UPPER(WINDOW_USER)) = '{0}'", V.Local.sWindowsUser.UCase, V.Local.sSQL)
+	F.ODBC.Connection!Com.OpenCommonConnection
+	F.ODBC.Connection!Com.ExecuteAndReturn(V.Local.sSQL, V.Local.sGSUser)
+	F.ODBC.Connection!Com.Close
+	
+	'No record found
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		V.Local.sGSUser.Set("")
+	'Record(s) found
+	f.Intrinsic.Control.Else
+		'Check if multiple records found. If multiple records found, set sGSUser as blank
+		F.Intrinsic.String.IsInString(V.Local.sGSUser, "#$#", True, V.Local.bInString)
+		F.Intrinsic.Control.If(V.Local.bInString)
+			F.Intrinsic.String.Build("Warning: Multiple GS Users with the windows username {0}. User will need to sign in.", V.Local.sWindowsUser, V.Local.sMessage)
+			F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+			V.Local.sGSUser.Set("")
+		F.Intrinsic.Control.EndIf			
+	F.Intrinsic.Control.EndIf	
+		
+	F.Global.Security.GetUsernameFromID(V.Local.sGSUser, V.Local.sGSUser)
+	F.Intrinsic.Control.If(V.Local.sGSUser.IsNotNoReturn)
+		F.Intrinsic.String.Split(V.Local.sGSUser, "*!*", V.Local.sSplit)
+		V.Local.sGSUser.Set(V.Local.sSplit(0))
+	F.Intrinsic.Control.Else
+		V.Local.sGSUser.Set("")
+	F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Variable.AddRV("GSUser", V.Local.sGSUser)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.GetGSUserFromWindowsUser.End
+
+Program.Sub.cmdSignIn_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sFilter.Declare
+	v.Local.sPass.Declare
+	v.Local.sUser.Declare
+	
+	v.Local.bLogin.Declare
+	gui.fLogin..Enabled(False)
+	v.Local.sUser.Set(v.Screen.fLogin!txtUser.text.Trim)
+	v.Local.sPass.Set(v.Screen.fLogin!txtPassword.text)
+	f.Intrinsic.Control.If(v.Local.sUser.trim,=,"")
+		f.Intrinsic.UI.Msgbox("Please enter a User Name to login.")
+		gui.fLogin.lblUsrName.Visible(True)
+		gui.fLogin..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.Else
+		gui.fLogin.lblUsrName.Visible(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.String.Build("GS_USER = '{0}'",v.Local.sUser.UCase,v.Local.sFilter)
+	f.Data.DataView.SetFilter("USERDT","USERVw",v.Local.sFilter)
+	f.Intrinsic.Control.If(v.DataView.USERDT!USERVw.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("Please enter a Valid User Name to login.")
+		gui.fLogin.lblUsrName.Visible(True)
+		gui.fLogin..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.Else
+		gui.fLogin.lblUsrName.Visible(False)
+	f.Intrinsic.Control.EndIf
+	
+	'Validate User
+	f.Global.Security.ValidateUser(v.Caller.CompanyCode,v.Local.sUser.UCase,v.Local.sPass,v.Local.bLogin)
+	'User and password match
+	f.Intrinsic.Control.If(v.Local.bLogin)
+		gui.fLogin.lblPassWord.Visible(False)
+		gui.fLogin..Visible(False)
+		v.Global.sUser.set(v.Local.sUser.Trim)
+		V.Global.sUser.Set(V.Global.sUser.UCase)
+		f.Intrinsic.Control.CallSub(CheckTable)
+		f.Intrinsic.Control.CallSub(PostSignIn)
+	'Incorrect password/user	
+	f.Intrinsic.control.Else
+		f.Intrinsic.UI.Msgbox("Password is Incorrect. Please enter a Valid Password.")
+		gui.fLogin.lblPassWord.Visible(True)
+		gui.fLogin..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.cmdSignIn_Click.End
+
+Program.Sub.PostSignIn.Start
+f.Intrinsic.Control.Try	
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+	
+	F.Intrinsic.Control.CallSub(Admin_mode)
+	F.Intrinsic.Control.CallSub(Dtpweek_change)
+	
+	f.data.dictionary.CreateFromSQL("DescDict","con","Select JOB + SUFFIX AS JS,RTRIM(DESCRIPTION) AS DESCRIPTION from V_JOB_HEADER ")
+	f.Data.Dictionary.SetDefaultReturn("DescDict","")
+	f.data.dictionary.CreateFromSQL("FGDict","con","Select JOB + SUFFIX AS JS,RTRIM(PART) AS PART from V_JOB_HEADER ")
+	f.Data.Dictionary.SetDefaultReturn("FGDict","")
+	F.Data.Dictionary.CreateFromSQL("dictSeqDesc", "Con", "Select JOB + SUFFIX + SEQ AS JSS, RTRIM(DESCRIPTION) as DESCRIPTION from V_JOB_OPERATIONS where LMO = 'L'")
+	F.Data.Dictionary.SetDefaultReturn("dictSeqDesc", "")
+
+	f.Intrinsic.Control.CallSub(Load)
+	
+	gui.F_Timesheet.optNormalTime.Value(1)
+	F.Intrinsic.Control.CallSub(optNormalTime_Click)	
+
+	Gui.F_Timesheet..Show
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.PostSignIn.End
+
+Program.Sub.Admin_Mode.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	v.Local.iRet.Declare
+	v.Local.sTitle.Declare
+	
+	'Are we Admin or not?
+	'We are looking for Group PYRLADMN
+	f.Intrinsic.Control.If(v.Global.sUser.Trim,=,"")
+		v.Global.sUser.Set(v.Caller.User.Trim)
+		v.Global.sUser.Set(v.Global.sUser.UCase)
+	f.Intrinsic.Control.EndIf
+	
+	F.Global.Security.IsInGroup(v.Global.sUser,"PYRLADMN",V.Caller.CompanyCode,V.Global.bAdminMode)
+	
+	f.Intrinsic.Control.If(V.Global.bAdminMode)
+		f.Intrinsic.UI.Msgbox("Your User ID has been flagged as an Admin for this Dashboard. Do you want to continue as an Admin or Launch the dashboard as a user to update your personal time sheet? Click 'Yes' to Launch as Admin or 'No' to Launch as a User.","Launch in Admin Mode?",4,v.Local.iRet)		
+		f.Intrinsic.Control.If(v.Local.iRet,=,v.Ambient.MsgBoxNo)
+			v.Global.bAdminMode.Set(False)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	'Admin
+	F.Intrinsic.Control.If(V.Global.bAdminMode)	
+		f.Intrinsic.String.Build("6796 - v2022.08.24 - Timesheet Entry (Admin Mode) - User: {0}",v.Global.sUser,v.Local.sTitle)
+	'Regular user
+	F.Intrinsic.Control.Else	
+		f.Intrinsic.String.Build("6796 - v2022.08.24 - Timesheet Entry (Normal Mode) - User: {0}",v.Global.sUser,v.Local.sTitle)		
+		'Upper block
+		GUI.F_Timesheet.lblEmp.Visible(False)
+		Gui.F_Timesheet.txtEmployee.Visible(False)
+		gui.F_Timesheet.cmdEmployeeBrowser.Visible(False)
+		Gui.F_Timesheet.lblUser.Visible(False)
+		Gui.F_Timesheet.txtUser.Visible(False)	
+		gui.F_Timesheet.cmdRefreshEmpSearch.Visible(False)
+		
+		gui.F_Timesheet.cmdLockPostToGSS.Visible(False)		
+		Gui.F_Timesheet.cmdUnlock.Visible(False)
+		gui.F_Timesheet.chkUpdateAllEmployees.Visible(False)
+	F.Intrinsic.Control.EndIf
+	
+	Gui.F_Timesheet..Caption(v.Local.sTitle)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Admin_Mode.End
+
+'****************************************************Miscellaneous********************************
+Program.Sub.dtpweek_change.Start
+'V_L_D
+f.Intrinsic.Control.Try
+	V.Local.dDate.Declare
+	
+	'compute the beginning of the week for that data
+	V.Local.dDate.Set(V.Screen.F_Timesheet!dtpWeek.Value)
+	F.Intrinsic.Date.BeginningOfWeek(V.Local.dDate,V.Local.dDate)
+	'Get Monday
+	Function.Intrinsic.Date.Dateadd("D",1,v.Local.dDate,v.Local.dDate)
+	Gui.F_Timesheet.dtpWeek.Value(V.Local.dDate)	
+	V.Global.dDate.Set(V.Screen.F_Timesheet!dtpWeek.Value)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.dtpweek_change.End
+
+Program.Sub.cmdBrowseJob_Click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sRet.Declare	
+	
+	F.Intrinsic.UI.Browser("Select WO","con","Select JOB, SUFFIX, PART, DESCRIPTION from V_JOB_HEADER ORDER BY JOB, SUFFIX","Job*!*Suffix*!*Part*!*Description","1200*!*700*!*2200*!*2700",8000,8000,V.Local.sRet)	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_Timesheet.txtAJob.Text(V.Local.sRet(0))
+		Gui.F_Timesheet.txtASuff.Text(V.Local.sRet(1))
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseJob_Click.End
+
+Program.Sub.cmdSeqBrowser_Click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sSql.Declare
+	V.Local.sRet.Declare
+	V.Local.sWC.Declare
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare
+	v.Local.sTitle.Declare
+	
+	v.Local.sJob.Set(V.Screen.F_Timesheet!txtAJob.Text.Trim)
+	v.Local.sSuffix.Set(V.Screen.F_Timesheet!txtASuff.Text.Trim)	
+	F.Intrinsic.Control.If(v.Local.sJob.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("No job selected!","Select Job")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Select SEQ, PART, DESCRIPTION from V_JOB_OPERATIONS where JOB = '{0}' AND SUFFIX = '{1}' AND LMO = 'L' and SEQ < 995000 order by job,suffix,seq",v.Local.sJob.PSQLFriendly,v.Local.sSuffix.PSQLFriendly,V.Local.sSql)
+		f.Intrinsic.String.Build("Select Seq (< 995000) - WO {0}-{1}",v.Local.sJob.Trim,v.Local.sSuffix.Trim,v.Local.sTitle)
+		F.Intrinsic.UI.Browser(v.Local.sTitle,"con",V.Local.sSql,"Sequence*!*Workcenter*!*Description","1200*!*1000*!*4800",8000,8000,V.Local.sRet)	
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)			
+			Gui.F_Timesheet.txtASeq.Text(V.Local.sRet(0))
+			V.Local.sWC.set(V.Local.sRet(1))
+			Gui.F_Timesheet.txtWC.Text(v.Local.sWC.Left4)
+		F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSeqBrowser_Click.End
+
+Program.Sub.cmdEmployeeBrowser_Click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sRet.Declare
+	
+	F.Intrinsic.UI.Browser("Select an Employee","con","Select Employee,Name,PR_USER_ID FROM V_EMPLOYEE_MSTR","Employee*!*Name*!*GS User ID","3500*!*3500*!*1000",V.Local.sRet)	
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"***CANCEL***")		
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)	
+		f.Intrinsic.Control.If(v.Local.sRet(2).trim,=,"")
+			f.Intrinsic.UI.Msgbox("Employee does not have a UserID","Invalid Employee")
+			f.Intrinsic.Control.ExitSub			
+		f.Intrinsic.Control.Else
+			'Everything is good
+			Gui.F_Timesheet.txtEmployee.Text(V.Local.sRet(0).Trim)
+			V.Global.sUser.Set(V.Local.sRet(2).Trim)
+			v.Global.sUser.Set(v.Global.sUser.UCase)
+			Gui.F_Timesheet.txtUser.Text(V.Global.sUser)
+		f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdEmployeeBrowser_Click.End
+
+Program.Sub.txtEmployee_Change.Start
+'V_L_D
+f.Intrinsic.Control.Try
+	V.Local.sEmployee.Declare
+	v.Local.sSql.Declare
+	v.Local.sRet.Declare
+	v.Local.sRet1.Declare
+	
+	V.Local.sEmployee.set(V.Screen.F_Timesheet!txtEmployee.Text.Trim)
+	f.Intrinsic.Control.If(v.Local.sEmployee,=,"")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.BlockEvents
+	
+	f.Intrinsic.String.Build("Select Top 1 Employee,PR_USER_ID FROM V_EMPLOYEE_MSTR where rtrim(employee) = '{0}'",v.Local.sEmployee.PSQLFriendly,v.Local.sSql)
+	f.odbc.Connection!con.ExecuteAndReturn(v.Local.sSql,v.Local.sRet)	
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("The employee ID does not exist in the database.","Invalid Employee Number")
+		Gui.F_Timesheet.txtUser.Text("")
+		Gui.F_Timesheet.txtEmployee.Text("")
+		f.Intrinsic.Control.UnBlockEvents
+		Gui.F_Timesheet.txtEmployee.SetFocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.BlockEvents
+	f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet(1).Trim,=,"")
+		f.Intrinsic.UI.Msgbox("The employee does not have a User ID.","Invalid User ID")
+		Gui.F_Timesheet.txtUser.Text("")
+		Gui.F_Timesheet.txtEmployee.Text("")
+		f.Intrinsic.Control.UnBlockEvents
+		Gui.F_Timesheet.txtEmployee.SetFocus
+		f.Intrinsic.Control.ExitSub	
+	f.Intrinsic.Control.EndIf
+	
+	'Everything is good
+	V.Global.sUser.Set(V.Local.sRet(1).Trim)
+	v.Global.sUser.Set(v.Global.sUser.UCase)
+	Gui.F_Timesheet.txtUser.Text(V.Global.sUser)
+	
+	f.Intrinsic.Control.UnBlockEvents
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.txtEmployee_Change.End
+
+'End Miscellaneous************************************************************************************
+Program.Sub.cmdRefresh_click.Start
+f.Intrinsic.Control.Try
+
+	f.Intrinsic.Control.CallSub(Load)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_click.End
+
+Program.Sub.Load.Start
+f.Intrinsic.Control.Try
+
+	v.Global.bSaveMsg.Set(false)
+	F.Intrinsic.Control.CallSub(Gridload)	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Load.End
+
+Program.Sub.cmdRefreshEmpSearch_Click.Start
+f.Intrinsic.Control.Try	
+
+	F.Intrinsic.Control.If(V.Screen.F_Timesheet!txtEmployee.Text.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("Please select an employee and user id.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.BlockEvents	
+	v.Global.sUser.Set(v.Screen.F_Timesheet!txtUser.Text.Trim)
+	v.Global.sUser.Set(v.Global.sUser.UCase)
+	f.Intrinsic.Control.CallSub(Load)	
+	F.Intrinsic.Control.UnBlockEvents
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdRefreshEmpSearch_Click.End
+
+Program.Sub.GridLoad.Start
+f.Intrinsic.Control.Try	
+	V.Local.sJSS.Declare
+	V.Local.sJS.Declare
+	V.Local.sSql.Declare
+	v.Local.sRet.Declare
+	V.Local.bReady.Declare
+	V.Local.bUpdated.Declare
+	
+	Gui.F_Timesheet.gsfgTimesheet.Visible(False)
+	
+	F.Intrinsic.Control.BlockEvents
+	f.Intrinsic.Control.If(v.DataTable.TempDt.Exists)
+		f.Data.DataTable.Close("TempDt")
+	f.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("select RTRIM(User_Id) as User_ID,JOB,SUFFIX,SEQ,JOB+SUFFIX+SEQ as JSS,JOB+SUFFIX as JS,'' as DESCRIPTION,'' as PART,WC,MON_HRS,MON_NOTES,TUES_HRS,TUES_NOTES,WED_HRS,WED_NOTES,THUR_HRS ,THUR_NOTES,FRI_HRS,FRI_NOTES,SAT_HRS,SAT_NOTES,SUN_HRS,SUN_NOTES,UPDATED,FLAG_READY,'A' as Wrapper ,Convert(Cast(Sun_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Sun_Hrs -  Cast(Sun_Hrs as Integer))* 60,0),SQL_Char),2) as Sun_Time ,Convert(Cast(Mon_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Mon_Hrs -  Cast(Mon_Hrs as Integer))* 60,0),SQL_Char),2) as Mon_Time ,Convert(Cast(Tues_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Tues_Hrs -  Cast(Tues_Hrs as Integer))* 60,0),SQL_Char),2) as Tues_Time ,Convert(Cast(Wed_Hrs as Integer),SQL_Char) + ':' +  Right('00' +  Convert(Round((Wed_Hrs -  Cast(Wed_Hrs as Integer))* 60,0),SQL_Char),2) as Wed_Time ,Convert(Cast(Thur_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Thur_Hrs -  Cast(Thur_Hrs as Integer))* 60,0),SQL_Char),2) as Thur_Time ,Convert(Cast(Fri_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Fri_Hrs -  Cast(Fri_Hrs as Integer))* 60,0),SQL_Char),2) as Fri_Time ,Convert(Cast(Sat_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Sat_Hrs -  Cast(Sat_Hrs as Integer))* 60,0),SQL_Char),2) as Sat_Time from GCG_6796_TIMSHT where RTRIM(UPPER(USER_ID)) = '{0}' AND BEG_WEEK = '{1}' ORDER BY JOB, SUFFIX, SEQ",V.Global.sUser.Trim,V.Global.dDate.PervasiveDate,V.Local.sSql)
+	f.Data.DataTable.CreateFromSQL("TempDt","con",v.Local.sSql,True)
+			
+	'bReady
+	f.Data.DataTable.Select("TempDt","IsNull(Flag_Ready,0) = 1",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+		V.Local.bReady.Set(True)
+	f.Intrinsic.Control.EndIf	
+	'bUpdated
+	f.Data.DataTable.Select("TempDt","IsNull(UPDATED,0) = 1",v.Local.sRet)	
+	f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+		V.Local.bUpdated.Set(True)
+	f.Intrinsic.Control.EndIf
+	
+	'Default values
+	Gui.F_Timesheet.cmdAdd.Enabled(True)
+	gui.F_Timesheet.cmdAddFromTemplate.Enabled(True)	
+	Gui.F_Timesheet.cmdSave.Enabled(True)
+	gui.F_Timesheet.cmdLockPostToGSS.Enabled(False)	
+	Gui.F_Timesheet.cmdPrint.Enabled(False)
+	Gui.F_Timesheet.gsfgTimesheet.Enabled(True)
+	
+	'Common values for Ready and Updated
+	f.Intrinsic.Control.If(v.Local.bReady,=,True,or,v.Local.bUpdated,=,True)
+		'Cannot add more records, nor save records, if ready or updated
+		Gui.F_Timesheet.cmdAdd.Enabled(False)
+		gui.F_Timesheet.cmdAddFromTemplate.Enabled(False)	
+		Gui.F_Timesheet.cmdSave.Enabled(False)
+		'Can print if ready or updated
+		Gui.F_Timesheet.cmdPrint.Enabled(True)
+		gui.F_Timesheet.cmdReadyForApproval.Enabled(False)
+	f.Intrinsic.Control.EndIf
+	
+	'Ready
+	F.Intrinsic.Control.If(V.Local.bReady)	
+		f.Intrinsic.Control.If(v.Global.bAdminMode)
+			gui.F_Timesheet.cmdLockPostToGSS.Enabled(True)
+			GUI.F_Timesheet.cmdUnlock.Enabled(True)
+			Gui.F_Timesheet.gsfgTimesheet.Enabled(True)
+		f.Intrinsic.Control.Else
+			Gui.F_Timesheet.gsfgTimesheet.Enabled(False)
+		f.Intrinsic.Control.EndIf
+		
+	'Not ready	
+	f.Intrinsic.Control.Else
+		gui.F_Timesheet.cmdLockPostToGSS.Enabled(False)
+		GUI.F_Timesheet.cmdUnlock.Enabled(False)
+		Gui.F_Timesheet.gsfgTimesheet.Enabled(True)		
+		gui.F_Timesheet.cmdReadyForApproval.Enabled(True)		
+	F.Intrinsic.Control.EndIf
+	
+	'Updated
+	F.Intrinsic.Control.If(V.Local.bUpdated)			
+		gui.F_Timesheet.cmdLockPostToGSS.Enabled(False)
+		GUI.F_Timesheet.cmdUnlock.Enabled(False)		
+		Gui.F_Timesheet.gsfgTimesheet.Enabled(False)	
+	F.Intrinsic.Control.EndIf
+	
+	f.Data.Datatable.FillFromDictionary("TempDT","DescDict","JS","Description")
+	f.Data.Datatable.FillFromDictionary("TempDT","FGDict","JS","Part")
+	
+	F.Data.DataTable.AddColumn("TempDT", "SEQ_DESCRIPTION", "String")
+	f.Data.Datatable.FillFromDictionary("TempDT","dictSeqDesc", "JSS", "SEQ_DESCRIPTION")
+	f.Data.DataTable.AddColumn("TempDT","Delete","String")
+	f.Data.DataView.Create("TempDT","MainVw",22)
+	
+	gui.F_Timesheet.gsfgTimesheet.AddGridviewFromDataview("TimeGrid","TempDT","MainVw")
+	
+	f.Intrinsic.Control.CallSub(Format_TimeSheetGrid)
+	
+	f.Intrinsic.Control.If(v.Screen.F_Timesheet!optNormalTime.Value,=,True)
+		f.Intrinsic.Control.CallSub(optNormalTime_Click)
+	f.Intrinsic.Control.ElseIf(v.Screen.F_Timesheet!optDecimalTime.Value,=,True)
+		f.Intrinsic.Control.CallSub(optDecimalTime_Click)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Control.CallSub(optBoth_Click)
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_Timesheet.gsfgTimesheet.MainView("TimeGrid")
+	Gui.F_Timesheet.gsfgTimesheet.Visible(True)
+	
+	f.Intrinsic.Control.CallSub(ComputeTotals)
+	
+	F.Intrinsic.Control.UnBlockEvents
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.GridLoad.End
+
+Program.Sub.Create_table_TempDt.Start
+f.Intrinsic.Control.Try
+
+	f.Intrinsic.Control.If(v.DataTable.TempDt.exists)
+		f.Data.DataTable.Close("TempDt")
+	f.Intrinsic.Control.EndIf		
+	
+	f.Data.DataTable.Create("TempDt",True)	
+	f.Data.DataTable.AddColumn("TempDt","JOB","String","")
+	f.Data.DataTable.AddColumn("TempDt","SUFFIX","String","")
+	f.Data.DataTable.AddColumn("TempDt","SEQ","String","")
+	f.Data.DataTable.AddColumn("TempDt","JSS","String","")
+	f.Data.DataTable.AddColumn("TempDt","JS","String","")
+	f.Data.DataTable.AddColumn("TempDt","DESCRIPTION","String","")
+	f.Data.DataTable.AddColumn("TempDt","PART","String","")
+	f.Data.DataTable.AddColumn("TempDt","WC","String","")
+	f.Data.DataTable.AddColumn("TempDt","MON_HRS","Float",0)
+	f.Data.DataTable.AddColumn("TempDt","MON_NOTES","String","")
+	
+	f.Data.DataTable.AddColumn("TempDt","TUES_HRS","Float",0)
+	f.Data.DataTable.AddColumn("TempDt","TUES_NOTES","String","")
+	
+	f.Data.DataTable.AddColumn("TempDt","WED_HRS","Float",0)
+	f.Data.DataTable.AddColumn("TempDt","WED_NOTES","String","")
+	
+	f.Data.DataTable.AddColumn("TempDt","THUR_HRS","Float",0)
+	f.Data.DataTable.AddColumn("TempDt","THUR_NOTES","String","")
+	
+	f.Data.DataTable.AddColumn("TempDt","FRI_HRS","Float",0)
+	f.Data.DataTable.AddColumn("TempDt","FRI_NOTES","String","")
+	
+	f.Data.DataTable.AddColumn("TempDt","SAT_HRS","Float",0)
+	f.Data.DataTable.AddColumn("TempDt","SAT_NOTES","String","")
+	
+	f.Data.DataTable.AddColumn("TempDt","SUN_HRS","Float",0)
+	f.Data.DataTable.AddColumn("TempDt","SUN_NOTES","String","")
+	
+	f.Data.DataTable.AddColumn("TempDt","UPDATED","boolean",False)
+	f.Data.DataTable.AddColumn("TempDt","FLAG_READY","boolean",False)
+	f.Data.DataTable.AddColumn("TempDt","Wrapper","String","")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Create_table_TempDt.End
+
+Program.Sub.Format_TimeSheetGrid.Start
+	V.Local.sSql.Declare
+	v.Local.sWC.Declare
+	v.Local.iCnt.Declare
+	v.Local.sProp.Declare
+	v.Local.sValue.Declare
+	v.Local.sValue2.Declare
+	v.Local.sValue3.Declare
+
+	v.Local.sSQL.Set("select distinct MACHINE from WORKCENTERS")
+	f.data.DataTable.CreateFromSQL("WCDT","con",v.Local.sSQL)
+	f.Data.Dataview.Create("WCDT","WCDTVW",22)
+	f.data.DataView.ToString("WCDT","WCDTVW","MACHINE","@!@","*!*",v.Local.sWC)
+	f.Data.DataView.Close("WCDT","WCDTVW")
+	f.Data.DataTable.Close("WCDT")
+	
+	gui.F_Timesheet.gsfgTimesheet.SuspendLayout
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","OptionsViewRowAutoHeight",False)	
+	
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","MultiSelect",False)
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","AllowSort",True)
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","AllowFilter",True)
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","OptionsDetailShowDetailTabs",False)
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","OptionsViewShowGroupPanel",False)
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","EnableAppearanceOddRow",True)
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","OptionsViewColumnAutoWidth",False)
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","AllowColumnResizing",True)	
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid","ColumnPanelRowHeight","50")
+	gui.F_Timesheet.gsfgTimesheet.SetGridviewProperty("TimeGrid",v.Enum.GridViewPropertyNames!SuppressNothingDates,True)	
+	
+	f.Intrinsic.Control.CallSub(Format_Bulk,"sProp","Visible","sValue","True")
+	f.Intrinsic.Control.CallSub(Format_Bulk,"sProp","HeaderFontBold","sValue","True")
+	f.Intrinsic.Control.CallSub(Format_Bulk,"sProp","HeaderWordWrap","sValue","wrap")
+	f.Intrinsic.Control.CallSub(Format_Bulk,"sProp","HeaderVAlignment","sValue","Top")
+	
+	f.Intrinsic.Control.CallSub(Visible_Index)
+	f.Intrinsic.Control.CallSub(Invisible)	
+	
+	'ReadOnly True Allow Edit False
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Delete","readonly", true)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Delete","allowedit", false)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB","readonly", true)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB","allowedit", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS","readonly", true)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS","allowedit", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Suffix","readonly", true)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Suffix","allowedit", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq","readonly", true)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq","allowedit", false)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","PART","readonly", true)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","PART","allowedit", false)
+	'ReadOnly False Allow Edit True
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS","allowedit", true)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES","allowedit", true)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS","allowedit", true)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES","allowedit", true)	
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time","allowedit", true)	
+
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Mon_Time","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Mon_Time","allowedit", true)	
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Tues_Time","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Tues_Time","allowedit", true)	
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Wed_Time","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Wed_Time","allowedit", true)	
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Thur_Time","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Thur_Time","allowedit", true)	
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Fri_Time","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Fri_Time","allowedit", true)	
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Sat_Time","readonly", false)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Sat_Time","allowedit", true)		
+
+	'ColumnEdit
+	gui.F_Timesheet.gsfgTimesheet.ColumnEdit("TimeGrid","WC","Dropdownlist",v.Local.sWC)
+	gui.F_Timesheet.gsfgTimesheet.ColumnEdit("TimeGrid","Delete","EditorButton","Delete")
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","User_ID","caption","User")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB","caption","Job")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS","caption","Job SS")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Suffix","caption","Suffix")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq","caption","Seq")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Description","caption","Description (Job)")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","seq_Description","caption","Description (Seq)")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","PART","caption","Part/Project")	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC","caption","Work Center")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES","caption","Sun Notes")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES","caption","Mon Notes")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES","caption","Tues Notes")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES","caption","Wed Notes")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES","caption","Th Notes")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES","caption","Fri Notes")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","UPDATED","Caption", "Updated")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES","caption","Sat Notes")
+	
+	F.Intrinsic.Control.CallSub(Gridtitle)
+	
+	v.Local.sProp.Set("HeaderHAlignment")
+	v.Local.sValue.Set("near")
+	v.Local.sValue2.Set("center")
+	v.Local.sValue3.Set("far")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","User_ID",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUFFIX",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Description",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SEQ",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq_Description",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Part",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Updated",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Delete",v.Local.sProp,v.Local.sValue2)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FLAG_READY",v.Local.sProp,v.Local.sValue2)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Wrapper",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JS",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time",v.Local.sProp,v.Local.sValue)
+	
+	v.Local.sProp.Set("CellHAlignment")
+	v.Local.sValue.Set("near")
+	v.Local.sValue2.Set("center")
+	v.Local.sValue3.Set("far")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","User_ID",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUFFIX",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Description",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SEQ",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq_Description",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Part",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Updated",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Delete",v.Local.sProp,v.Local.sValue2)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FLAG_READY",v.Local.sProp,v.Local.sValue2)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Wrapper",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JS",v.Local.sProp,v.Local.sValue2)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_Time",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_Time",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_Time",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_Time",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_Time",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_Time",v.Local.sProp,v.Local.sValue3)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time",v.Local.sProp,v.Local.sValue3)
+	
+	v.Local.sProp.Set("EditMask")
+	v.Local.sValue.Set("[0-9]+:[0-5][0-9]")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_TIME",v.Local.sProp,v.Local.sValue)
+	
+	v.Local.sProp.Set("EditMaskType")
+	v.Local.sValue.Set("RegEx")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_TIME",v.Local.sProp,v.Local.sValue)	
+	
+	v.Local.sProp.Set("EditMaskAsDisplayFormat")
+	v.Local.sValue.Set("True")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_TIME",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_TIME",v.Local.sProp,v.Local.sValue)			
+	
+	'Width
+	v.Local.sProp.Set("Width")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","User_ID",v.Local.sProp,"65")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB",v.Local.sProp,"65")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUFFIX",v.Local.sProp,"50")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Description",v.Local.sProp,"120")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SEQ",v.Local.sProp,"65")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq_Description",v.Local.sProp,"120")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Part",v.Local.sProp,"120")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Updated",v.Local.sProp,"65")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Delete",v.Local.sProp,"65")	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FLAG_READY",v.Local.sProp,"100")	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Wrapper",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JS",v.Local.sProp,"100")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_Time",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_Time",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_Time",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_Time",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_Time",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_Time",v.Local.sProp,"85")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time",v.Local.sProp,"85")
+
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS","Width", 75)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_TIME","Width", 75)			
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS","Width", 75)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_Time","Width", 75)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS","Width", 75)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_Time","Width", 75)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS","Width", 75)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_Time","Width", 75)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS","Width", 75)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_Time","Width", 75)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS","Width", 75)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_Time","Width", 75)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS","Width", 75)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time","Width", 75)	
+	
+
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS","EditMask", "###.00")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS", "EditMaskType", "numeric")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS", "EditMaskAsDisplayFormat", true)	
+
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS","EditMask", "###.00")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS", "EditMaskType", "numeric")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS", "EditMaskAsDisplayFormat", true)	
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS","EditMask", "###.00")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS", "EditMaskType", "numeric")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS", "EditMaskAsDisplayFormat", true)
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS","EditMask", "###.00")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS", "EditMaskType", "numeric")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS", "EditMaskAsDisplayFormat", true)
+	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS","EditMask", "###.00")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS", "EditMaskType", "numeric")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS", "EditMaskAsDisplayFormat", true)
+
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS","EditMask", "###.00")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS", "EditMaskType", "numeric")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS", "EditMaskAsDisplayFormat", true)		
+
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS","EditMask", "###.00")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS", "EditMaskType", "numeric")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS", "EditMaskAsDisplayFormat", true)
+	
+	gui.F_Timesheet.gsfgTimesheet.ResumeLayout
+Program.Sub.Format_TimeSheetGrid.End
+
+Program.Sub.Format_Bulk.Start
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","User_ID",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUFFIX",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Description",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SEQ",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq_Description",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Part",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Updated",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Delete",v.Args.sProp,v.Args.sValue)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FLAG_READY",v.Args.sProp,v.Args.sValue)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Wrapper",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JS",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_Time",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_Time",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_Time",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_Time",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_Time",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_Time",v.Args.sProp,v.Args.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time",v.Args.sProp,v.Args.sValue)		
+	
+Program.Sub.Format_Bulk.End
+
+Program.Sub.optNormalTime_Click.Start
+	v.Local.sProp.Declare
+	v.Local.sValue.Declare
+	
+	f.Intrinsic.Control.BlockEvents
+	gui.F_Timesheet.gsfgTimesheet.SuspendLayout
+	
+	f.Intrinsic.Control.CallSub(Format_Bulk,"sProp","Visible","sValue","True")
+	f.Intrinsic.Control.CallSub(Visible_Index)	
+	
+	v.Local.sProp.Set("Visible")
+	v.Local.sValue.Set("False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS",v.Local.sProp,v.Local.sValue)		
+	
+	f.Intrinsic.Control.CallSub(Invisible)	
+	
+	gui.F_Timesheet.gsfgTimesheet.ResumeLayout
+	f.Intrinsic.Control.UnBlockEvents
+Program.Sub.optNormalTime_Click.End
+
+Program.Sub.optDecimalTime_Click.Start
+	v.Local.sProp.Declare
+	v.Local.sValue.Declare
+	
+	f.Intrinsic.Control.BlockEvents
+	gui.F_Timesheet.gsfgTimesheet.SuspendLayout	
+	
+	f.Intrinsic.Control.CallSub(Format_Bulk,"sProp","Visible","sValue","True")
+	f.Intrinsic.Control.CallSub(Visible_Index)	
+	
+	v.Local.sProp.Set("Visible")
+	v.Local.sValue.Set("False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_Time",v.Local.sProp,v.Local.sValue)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time",v.Local.sProp,v.Local.sValue)	
+	
+	f.Intrinsic.Control.CallSub(Invisible)	
+	
+	gui.F_Timesheet.gsfgTimesheet.ResumeLayout
+	f.Intrinsic.Control.UnBlockEvents
+Program.Sub.optDecimalTime_Click.End
+
+Program.Sub.optBoth_Click.Start
+	v.Local.sProp.Declare
+	v.Local.sValue.Declare
+	v.Local.iCnt.Declare
+	
+	f.Intrinsic.Control.BlockEvents
+	gui.F_Timesheet.gsfgTimesheet.SuspendLayout	
+	
+	f.Intrinsic.Control.CallSub(Format_Bulk,"sProp","Visible","sValue","True")	
+	
+	v.Local.sProp.Set("VisibleIndex")
+	v.Local.iCnt.Set(-1)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","User_ID",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUFFIX",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Description",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SEQ",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq_Description",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Part",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time",v.Local.sProp,v.Local.iCnt.++)			
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Updated",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Delete",v.Local.sProp,v.Local.iCnt.++)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JS",v.Local.sProp,v.Local.iCnt.++)	
+	
+	f.Intrinsic.Control.CallSub(Invisible)	
+	
+	gui.F_Timesheet.gsfgTimesheet.ResumeLayout
+	f.Intrinsic.Control.UnBlockEvents
+Program.Sub.optBoth_Click.End
+
+Program.Sub.Visible_Index.Start
+	v.Local.sProp.Declare
+	v.Local.iCnt.Declare
+	
+	v.Local.sProp.Set("VisibleIndex")
+	v.Local.iCnt.Set(-1)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","User_ID",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JOB",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUFFIX",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Description",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SEQ",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Seq_Description",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Part",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WC",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_Time",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_Time",v.Local.sProp,v.Local.iCnt.++)		
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Updated",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Delete",v.Local.sProp,v.Local.iCnt.++)	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS",v.Local.sProp,v.Local.iCnt.++)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JS",v.Local.sProp,v.Local.iCnt.++)	
+Program.Sub.Visible_Index.End
+
+Program.Sub.Invisible.Start
+	'Invisible
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_NOTES","Visible", "False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_NOTES","Visible", "False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_NOTES","Visible", "False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_NOTES","Visible", "False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_NOTES","Visible", "False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_NOTES","Visible", "False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_NOTES","Visible", "False")	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FLAG_READY","visible","false")	
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","Wrapper","visible","False")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JSS","visible","false")
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","JS","visible","false")	
+Program.Sub.Invisible.End
+
+Program.Sub.GridTitle.Start
+f.Intrinsic.Control.Try	
+	V.Local.sDate.Declare
+	V.Local.dDate.Declare(String)
+	V.Local.iCol.Declare
+	
+	'Set Table Header for Main Screen.
+	'set the header captions and column widths
+	F.Intrinsic.Control.BlockEvents
+	gui.F_Timesheet.gsfgTimesheet.SuspendLayout
+	F.Intrinsic.String.Build("Mon: {0}",V.Global.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_HRS","caption",v.Local.sDate)
+	F.Intrinsic.String.Build("Mon: {0}",V.Global.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","MON_TIME","caption",v.Local.sDate)
+
+	F.Intrinsic.Date.DateAdd("D",1,V.Global.dDate,V.Local.dDate)
+	F.Intrinsic.String.Build("Tues: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_HRS","caption",v.Local.sDate)
+	F.Intrinsic.String.Build("Tues: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","TUES_TIME","caption",v.Local.sDate)	
+
+	F.Intrinsic.Date.DateAdd("D",1,V.Local.dDate,V.Local.dDate)
+	F.Intrinsic.String.Build("Wed: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_HRS","caption",v.Local.sDate)
+	F.Intrinsic.String.Build("Wed: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","WED_TIME","caption",v.Local.sDate)	
+	
+	F.Intrinsic.Date.DateAdd("D",1,V.Local.dDate,V.Local.dDate)
+	F.Intrinsic.String.Build("Thur: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_HRS","caption",v.Local.sDate)
+	F.Intrinsic.String.Build("Thur: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","THUR_TIME","caption",v.Local.sDate)	
+	
+	F.Intrinsic.Date.DateAdd("D",1,V.Local.dDate,V.Local.dDate)
+	F.Intrinsic.String.Build("Fri: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_HRS","caption",v.Local.sDate)
+	F.Intrinsic.String.Build("Fri: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","FRI_TIME","caption",v.Local.sDate)
+
+	F.Intrinsic.Date.DateAdd("D",1,V.Local.dDate,V.Local.dDate)
+	F.Intrinsic.String.Build("Sat: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_HRS","caption",v.Local.sDate)
+	F.Intrinsic.String.Build("Sat: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SAT_TIME","caption",v.Local.sDate)	
+
+	F.Intrinsic.Date.DateAdd("D",1,V.local.dDate,V.local.dDate)
+	F.Intrinsic.String.Build("Sun: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_HRS","caption",v.Local.sDate)
+	F.Intrinsic.String.Build("Sun: {0}",V.Local.dDate.FORMATM/DD/YY,V.Local.sDate)
+	gui.F_Timesheet.gsfgTimesheet.SetColumnProperty("TimeGrid","SUN_TIME","caption",v.Local.sDate)	
+
+	F.Intrinsic.Control.UnBlockEvents
+	gui.F_Timesheet.gsfgTimesheet.ResumeLayout
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.GridTitle.End
+
+Program.Sub.gsfgTimesheet_RowCellClick.Start
+f.Intrinsic.Control.Try
+	v.Local.ssql.Declare
+	v.Local.sParam.Declare
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare
+	
+
+	f.Intrinsic.Control.If(v.Args.Column.UCase,=,"DELETE")
+		F.Intrinsic.String.Build("DELETE from GCG_6796_TIMSHT where rtrim(UPPER(USER_ID)) = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND SEQ = '{3}' AND BEG_WEEK = '{4}'",v.DataTable.TempDT(v.Args.RowIndex).User_ID!FieldVal,v.DataTable.TempDT(v.Args.RowIndex).JOB!FieldVal,v.DataTable.TempDT(v.Args.RowIndex).SUFFIX!FieldVal,v.DataTable.TempDT(v.Args.RowIndex).SEQ!FieldVal,V.Global.dDate.PervasiveDate,V.Local.sSql)	
+		f.odbc.Connection!con.execute(v.Local.ssql)
+		f.data.DataTable.DeleteRow("TempDT",v.Args.RowIndex)	
+		f.Data.DataTable.AcceptChanges("TempDT")
+		f.Intrinsic.Control.CallSub(ComputeTotals)
+	f.Intrinsic.Control.ElseIf(v.Args.Column.UCase,=,"JOB","OR",v.Args.Column.UCase,=,"SUFFIX",v.Args.Column.UCase,=,"SEQ", v.Args.Column.UCase,=,"JSS")
+		v.Local.sJob.Set(v.DataTable.TempDT(v.Args.RowIndex).JOB!FieldVal)
+		v.Local.sSuffix.Set(v.DataTable.TempDT(v.Args.RowIndex).SUFFIX!FieldVal)
+		gui.F_Timesheet..Enabled(False)
+		f.Intrinsic.String.RPad(v.Local.sJob," ",6,v.Local.sJob)
+		f.Intrinsic.String.RPad(v.Local.sSuffix," ",3,v.Local.sSuffix)
+	
+		f.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A",v.Local.sJob,v.Local.sSuffix,v.Local.sParam)
+	
+		f.Global.General.CallWrapperSync(450000,v.Local.sParam)
+		gui.F_Timesheet..SetFocus
+		gui.F_Timesheet..Enabled(True)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.gsfgTimesheet_RowCellClick.End
+
+Program.Sub.gsfgTimesheet_CellValueChanged.Start
+f.Intrinsic.Control.Try	
+	v.Local.fValue.Declare
+	v.Local.sTimeColumn.Declare	
+	v.Local.sRet.Declare
+	v.Local.sValue.Declare
+	v.Local.sFound.Declare
+	v.Local.iHour.Declare
+	v.Local.iMinute.Declare
+	v.Local.sMinute.Declare
+	v.Local.sTime.Declare
+	v.Local.sDecimalColumn.Declare
+	v.Local.sHold.Declare
+	
+	v.Global.bSaveMsg.Set(true)
+	
+	
+	f.Intrinsic.Control.SelectCase(v.Args.Column.Ucase)
+		f.Intrinsic.Control.CaseAny("SUN_HRS","MON_HRS","TUES_HRS","WED_HRS","THUR_HRS","FRI_HRS","SAT_HRS")
+			f.Intrinsic.String.Replace(v.Args.Column.UCase,"HRS","TIME",V.Local.sTimeColumn)
+			
+			'Validate, must be positive number, and not must be less than 24
+			v.Local.fValue.Set(v.DataTable.TempDt(v.Args.RowIndex).[v.Args.Column]!FieldValString)			
+			f.Intrinsic.Control.If(v.Local.fValue,<,0,or,v.Local.fValue,>=,24,v.DataTable.TempDt(v.Args.RowIndex).[v.Args.Column]!FieldValTrim,=,"")								
+				f.Intrinsic.UI.Msgbox("Invalid number")
+				f.Data.DataTable.SetValue("TempDt",V.Args.RowIndex,v.Args.Column,"0",v.Local.sTimeColumn,"0:00")
+				F.Intrinsic.Control.CallSub(ComputeTotals)
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf	
+			f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",v.Local.fValue)
+			f.Data.DataTable.SetValue("TempDt",V.Args.RowIndex,v.Local.sTimeColumn,v.Args.sTime)
+			F.Intrinsic.Control.CallSub(ComputeTotals)
+	
+		f.Intrinsic.Control.CaseAny("SUN_TIME","MON_TIME","TUES_TIME","WED_TIME","THUR_TIME","FRI_TIME","SAT_TIME")		
+			f.Intrinsic.String.Replace(v.Args.Column.UCase,"TIME","HRS",V.Local.sDecimalColumn)
+			'Validate
+			v.Local.sValue.Set(v.DataTable.TempDt(v.Args.RowIndex).[v.Args.Column]!FieldValTrim)			
+			f.Intrinsic.String.RegExMatch(v.Local.sValue,"^[0-9]{1,2}:[0-5]{1}[0-9]{1}$",True,v.Local.sFound)
+			f.Intrinsic.Control.If(v.Local.sFound,=,"")
+				f.Intrinsic.UI.Msgbox("Invalid time")
+				f.Data.DataTable.SetValue("TempDt",V.Args.RowIndex,v.Args.Column,"0:00",v.Local.sDecimalColumn,"0.00")
+				F.Intrinsic.Control.CallSub(ComputeTotals)
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+	
+			'More than 2 colons
+			f.Intrinsic.String.Split(v.Local.sValue,":",v.Local.sHold)
+			f.Intrinsic.Control.If(v.Local.sHold.UBound,>,1)
+				f.Intrinsic.UI.Msgbox("Invalid time. Must have only 1 colon.")
+				f.Data.DataTable.SetValue("TempDt",V.Args.RowIndex,v.Args.Column,"0:00",v.Local.sDecimalColumn,"0.00")
+				F.Intrinsic.Control.CallSub(ComputeTotals)
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+			
+			'More than 24 hours
+			f.Intrinsic.Control.If(v.Local.sHold.Long,>=,24)
+				f.Intrinsic.UI.Msgbox("Invalid time. Must less than 24 hours.")
+				f.Data.DataTable.SetValue("TempDt",V.Args.RowIndex,v.Args.Column,"0:00",v.Local.sDecimalColumn,"0.00")
+				F.Intrinsic.Control.CallSub(ComputeTotals)
+				f.Intrinsic.Control.ExitSub			
+			f.Intrinsic.Control.EndIf			
+			
+			f.Intrinsic.Control.CallSub(Get_Time_From_Normal,"sValue",v.Local.sValue)
+			f.Data.DataTable.SetValue("TempDt",V.Args.RowIndex,v.Local.sDecimalColumn,v.Args.sTime)			
+			F.Intrinsic.Control.CallSub(ComputeTotals)
+			
+	f.Intrinsic.Control.EndSelect
+	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.gsfgTimesheet_CellValueChanged.End
+
+Program.Sub.ComputeTotals.Start
+f.Intrinsic.Control.Try
+	v.Local.fMonHrs.Declare
+	v.Local.fTuesHrs.Declare
+	v.Local.fWedHrs.Declare
+	v.Local.fThurHrs.Declare
+	v.Local.fFriHrs.Declare
+	v.Local.fSatHrs.Declare
+	v.Local.fSunHrs.Declare
+	v.Local.fTotHrs.Declare
+	v.Local.sHold.Declare
+	V.Local.fTemp.Declare
+	V.Local.sTemp.Declare
+	V.Local.sTemp1.Declare
+	V.Local.sTemp2.Declare
+	V.Local.sTemp3.Declare
+	V.Local.sTemp4.Declare
+	V.Local.sTemp5.Declare
+	V.Local.sTemp6.Declare
+	V.Local.sTemp7.Declare
+	
+	
+	F.Intrinsic.Control.CallSub(LoadClockInTime)
+	
+	'computes the total hours and loads them onto text boxes to the side
+	f.Intrinsic.Control.If(v.DataTable.CompDt.Exists)
+		f.Data.DataTable.Close("CompDT")
+	f.Intrinsic.Control.EndIf
+	F.Data.DataView.ToDataTable("TempDT","MainVw","CompDT",True)
+	
+	f.Data.DataTable.Compute("CompDT","Sum(SUN_HRS)","",v.Local.fSunHrs)		
+	f.Data.DataTable.Compute("CompDT","Sum(MON_HRS)","",v.Local.fMonHrs)		
+	f.Data.DataTable.Compute("CompDT","Sum(TUES_HRS)","",v.Local.fTuesHrs)
+	f.Data.DataTable.Compute("CompDT","Sum(WED_HRS)","",v.Local.fWedHrs)
+	f.Data.DataTable.Compute("CompDT","Sum(THUR_HRS)","",v.Local.fThurHrs)
+	f.Data.DataTable.Compute("CompDT","Sum(FRI_HRS)","",v.Local.fFriHrs)
+	f.Data.DataTable.Compute("CompDT","Sum(SAT_HRS)","",v.Local.fSatHrs)		
+	f.Intrinsic.math.Add(v.Local.fSunHrs,v.Local.fMonHrs,v.Local.fTuesHrs,v.Local.fWedHrs,v.Local.fThurHrs,v.Local.fFriHrs,v.Local.fSatHrs,v.Local.fTotHrs)		
+	
+	'Normal mode
+	f.Intrinsic.Control.If(v.Screen.F_Timesheet!optNormalTime.Value)
+		v.Global.sTime.Redim(0,6)
+		
+		f.Intrinsic.Control.CallSub(Total_Normal_Hours,"sColToCal","MON_Time")
+		gui.F_Timesheet.txtMonHrs.Text(v.Args.sTotalTime)
+		v.Global.sTime(0).Set(v.Args.sTotalTime)
+		f.Intrinsic.Control.CallSub(Total_Normal_Hours,"sColToCal","TUES_Time")
+		gui.F_Timesheet.txtTuesHrs.Text(v.Args.sTotalTime)
+		v.Global.sTime(1).Set(v.Args.sTotalTime)
+		f.Intrinsic.Control.CallSub(Total_Normal_Hours,"sColToCal","WED_Time")
+		gui.F_Timesheet.txtWedHrs.Text(v.Args.sTotalTime)
+		v.Global.sTime(2).Set(v.Args.sTotalTime)
+		f.Intrinsic.Control.CallSub(Total_Normal_Hours,"sColToCal","THUR_Time")
+		gui.F_Timesheet.txtThurHrs.Text(v.Args.sTotalTime)
+		v.Global.sTime(3).Set(v.Args.sTotalTime)
+		f.Intrinsic.Control.CallSub(Total_Normal_Hours,"sColToCal","FRI_Time")
+		gui.F_Timesheet.txtFriHrs.Text(v.Args.sTotalTime)
+		v.Global.sTime(4).Set(v.Args.sTotalTime)
+		f.Intrinsic.Control.CallSub(Total_Normal_Hours,"sColToCal","SAT_Time")
+		gui.F_Timesheet.txtSatHrs.Text(v.Args.sTotalTime)
+		v.Global.sTime(5).Set(v.Args.sTotalTime)
+		f.Intrinsic.Control.CallSub(Total_Normal_Hours,"sColToCal","SUN_Time")
+		gui.F_Timesheet.txtSunHrs.Text(V.Args.sTotalTime)
+		v.Global.sTime(6).Set(v.Args.sTotalTime)		
+		
+		f.Intrinsic.Control.CallSub(Total_Normal_Time_Week)
+		gui.F_Timesheet.txtTotHrs.Text(v.Args.sTotalTimeWeek)
+		
+		f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",V.Args.fMon)
+		gui.F_Timesheet.lblClockHrsMon.Caption(v.Args.sTime)
+		f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",V.Args.fTues)
+		gui.F_Timesheet.lblClockHrsTues.Caption(v.Args.sTime)
+		f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",V.Args.fWed)
+		gui.F_Timesheet.lblClockHrsWed.Caption(v.Args.sTime)
+		f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",V.Args.fThur)
+		gui.F_Timesheet.lblClockHrsThur.Caption(v.Args.sTime)
+		f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",V.Args.fFri)
+		gui.F_Timesheet.lblClockHrsFri.Caption(v.Args.sTime)
+		f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",V.Args.fSat)
+		gui.F_Timesheet.lblClockHrsSat.Caption(v.Args.sTime)
+		f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",V.Args.fSun)
+		gui.F_Timesheet.lblClockHrsSun.Caption(V.Args.sTime)		
+		f.Intrinsic.Control.CallSub(Get_Time_From_Decimal,"fValue",V.Args.fTotal)
+		gui.F_Timesheet.lblClockHrsTotal.Caption(v.Args.sTime)	
+
+	'Decimal mode	
+	f.Intrinsic.Control.Else		
+		F.Intrinsic.Math.Round(V.Local.fMonHrs, 2, V.Local.fMonHrs)
+		F.Intrinsic.Math.Round(V.Local.fTuesHrs, 2, V.Local.fTuesHrs)
+		F.Intrinsic.Math.Round(V.Local.fWedHrs, 2, V.Local.fWedHrs)
+		F.Intrinsic.Math.Round(V.Local.fThurHrs, 2, V.Local.fThurHrs)
+		F.Intrinsic.Math.Round(V.Local.fFriHrs, 2, V.Local.fFriHrs)
+		F.Intrinsic.Math.Round(V.Local.fSatHrs, 2, V.Local.fSatHrs)
+		F.Intrinsic.Math.Round(V.Local.fSunHrs, 2, V.Local.fSunHrs)
+		F.Intrinsic.Math.Round(V.Local.fTotHrs, 2, V.Local.fTotHrs)	
+		
+		F.Intrinsic.String.Format(V.Local.fMonHrs, "############0.00", V.Local.sTemp2)
+		F.Intrinsic.String.Format(V.Local.fTuesHrs, "############0.00", V.Local.sTemp3)
+		F.Intrinsic.String.Format(V.Local.fWedHrs, "############0.00", V.Local.sTemp4)
+		F.Intrinsic.String.Format(V.Local.fThurHrs, "############0.00", V.Local.sTemp5)
+		F.Intrinsic.String.Format(V.Local.fFriHrs, "############0.00", V.Local.sTemp6)
+		F.Intrinsic.String.Format(V.Local.fSatHrs, "############0.00", V.Local.sTemp7)	
+		F.Intrinsic.String.Format(V.Local.fSunHrs, "############0.00", V.Local.sTemp1)
+		F.Intrinsic.String.Format(V.Local.fTotHrs, "############0.00", V.Local.sTemp)
+		
+		gui.F_Timesheet.txtMonHrs.Text(v.Local.sTemp2)
+		gui.F_Timesheet.txtTuesHrs.Text(v.Local.sTemp3)
+		gui.F_Timesheet.txtWedHrs.Text(v.Local.sTemp4)
+		gui.F_Timesheet.txtThurHrs.Text(v.Local.sTemp5)
+		gui.F_Timesheet.txtFriHrs.Text(v.Local.sTemp6)
+		gui.F_Timesheet.txtSatHrs.Text(v.Local.sTemp7)
+		gui.F_Timesheet.txtSunHrs.Text(V.Local.sTemp1)
+		gui.F_Timesheet.txtTotHrs.Text(v.Local.sTemp)	
+		
+		v.Local.fMonHrs.Set(v.Args.fMon)
+		v.Local.fTuesHrs.Set(v.Args.fTues)
+		v.Local.fWedHrs.Set(v.Args.fWed)
+		v.Local.fThurHrs.Set(v.Args.fThur)
+		v.Local.fFriHrs.Set(v.Args.fFri)
+		v.Local.fSatHrs.Set(v.Args.fSat)
+		v.Local.fSunHrs.Set(v.Args.fSun)
+		v.Local.fTotHrs.Set(v.Args.fTotal)
+		
+		F.Intrinsic.Math.Round(v.Local.fMonHrs, 2, V.Local.fMonHrs)
+		F.Intrinsic.Math.Round(v.Local.fTuesHrs, 2, V.Local.fTuesHrs)
+		F.Intrinsic.Math.Round(v.Local.fWedHrs, 2, V.Local.fWedHrs)
+		F.Intrinsic.Math.Round(v.Local.fThurHrs, 2, V.Local.fThurHrs)
+		F.Intrinsic.Math.Round(v.Local.fFriHrs, 2, V.Local.fFriHrs)
+		F.Intrinsic.Math.Round(v.Local.fSatHrs, 2, V.Local.fSatHrs)
+		F.Intrinsic.Math.Round(v.Local.fSunHrs, 2, V.Local.fSunHrs)
+		F.Intrinsic.Math.Round(v.Local.fTotHrs, 2, V.Local.fTotHrs)	
+		
+		F.Intrinsic.String.Format(V.Local.fMonHrs, "############0.00", V.Local.sTemp2)
+		F.Intrinsic.String.Format(V.Local.fTuesHrs, "############0.00", V.Local.sTemp3)
+		F.Intrinsic.String.Format(V.Local.fWedHrs, "############0.00", V.Local.sTemp4)
+		F.Intrinsic.String.Format(V.Local.fThurHrs, "############0.00", V.Local.sTemp5)
+		F.Intrinsic.String.Format(V.Local.fFriHrs, "############0.00", V.Local.sTemp6)
+		F.Intrinsic.String.Format(V.Local.fSatHrs, "############0.00", V.Local.sTemp7)	
+		F.Intrinsic.String.Format(V.Local.fSunHrs, "############0.00", V.Local.sTemp1)
+		F.Intrinsic.String.Format(V.Local.fTotHrs, "############0.00", V.Local.sTemp)
+		
+		gui.F_Timesheet.lblClockHrsMon.Caption(v.Local.sTemp2)
+		gui.F_Timesheet.lblClockHrsTues.Caption(v.Local.sTemp3)
+		gui.F_Timesheet.lblClockHrsWed.Caption(v.Local.sTemp4)
+		gui.F_Timesheet.lblClockHrsThur.Caption(v.Local.sTemp5)
+		gui.F_Timesheet.lblClockHrsFri.Caption(v.Local.sTemp6)
+		gui.F_Timesheet.lblClockHrsSat.Caption(v.Local.sTemp7)
+		gui.F_Timesheet.lblClockHrsSun.Caption(V.Local.sTemp1)
+		gui.F_Timesheet.lblClockHrsTotal.Caption(v.Local.sTemp)		
+	f.Intrinsic.Control.EndIf	
+
+	f.Data.DataTable.Close("CompDT")
+	
+	GUI.F_Timesheet.txtMonHrs.BackColor(12648384)
+	GUI.F_Timesheet.txtTuesHrs.BackColor(12648384)
+	GUI.F_Timesheet.txtWedHrs.BackColor(12648384)
+	GUI.F_Timesheet.txtThurHrs.BackColor(12648384)
+	GUI.F_Timesheet.txtFriHrs.BackColor(12648384)
+	GUI.F_Timesheet.txtSatHrs.BackColor(12648384)
+	GUI.F_Timesheet.txtSunHrs.BackColor(12648384)
+	GUI.F_Timesheet.txtTotHrs.BackColor(v.Color.GSS)
+	GUI.F_Timesheet.txtTotHrs.ForeColor(V.Color.White)
+	
+'	F.Intrinsic.Control.If(V.Args.fMon, =, 0)
+'		GUI.F_Timesheet.txtMonHrs.BackColor(12648384)
+'	F.Intrinsic.Control.Else
+'		GUI.F_Timesheet.txtMonHrs.BackColor(V.Color.Pink)
+'	F.Intrinsic.Control.EndIf
+'	
+'	F.Intrinsic.Control.If(V.Args.fTues, =, 0)
+'		GUI.F_Timesheet.txtTuesHrs.BackColor(12648384)
+'	F.Intrinsic.Control.Else
+'		GUI.F_Timesheet.txtTuesHrs.BackColor(V.Color.Pink)
+'	F.Intrinsic.Control.EndIf
+'	
+'	F.Intrinsic.Control.If(V.Args.fWed, =, 0)
+'		GUI.F_Timesheet.txtWedHrs.BackColor(12648384)
+'	F.Intrinsic.Control.Else
+'		GUI.F_Timesheet.txtWedHrs.BackColor(V.Color.Pink)
+'	F.Intrinsic.Control.EndIf
+'	
+'	F.Intrinsic.Control.If(V.Args.fThur, =, 0)
+'		GUI.F_Timesheet.txtThurHrs.BackColor(12648384)
+'	F.Intrinsic.Control.Else
+'		GUI.F_Timesheet.txtThurHrs.BackColor(V.Color.Pink)
+'	F.Intrinsic.Control.EndIf
+'	
+'	F.Intrinsic.Control.If(V.Args.fFri, =, 0)
+'		GUI.F_Timesheet.txtFriHrs.BackColor(12648384)
+'	F.Intrinsic.Control.Else
+'		GUI.F_Timesheet.txtFriHrs.BackColor(V.Color.Pink)
+'	F.Intrinsic.Control.EndIf
+'	
+'	F.Intrinsic.Control.If(V.Args.fSat, =, 0)
+'		GUI.F_Timesheet.txtSatHrs.BackColor(12648384)
+'	F.Intrinsic.Control.Else
+'		GUI.F_Timesheet.txtSatHrs.BackColor(V.Color.Pink)
+'	F.Intrinsic.Control.EndIf
+'	
+'	F.Intrinsic.Control.If(V.Args.fSun, =, 0)
+'		GUI.F_Timesheet.txtSunHrs.BackColor(12648384)
+'	F.Intrinsic.Control.Else
+'		GUI.F_Timesheet.txtSunHrs.BackColor(V.Color.Pink)
+'	F.Intrinsic.Control.EndIf
+'	
+'	F.Intrinsic.Control.If(V.Args.fTotal, =, 0)
+'		GUI.F_Timesheet.txtTotHrs.BackColor(v.Color.GSS)
+'	F.Intrinsic.Control.Else
+'		GUI.F_Timesheet.txtTotHrs.BackColor(V.Color.Pink)
+'	F.Intrinsic.Control.EndIf
+	
+	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.ComputeTotals.End
+
+Program.Sub.LoadClockInTime.Start
+'get the actual time and attendance clock in time for the selected employee/week
+f.Intrinsic.Control.Try
+	V.Local.sEmployee.Declare
+	V.Local.dStartDate.Declare
+	V.Local.dEndDate.Declare
+	V.Local.sSQL.Declare
+	V.Local.sMessage.Declare
+	V.Local.iCounter.Declare
+	V.Local.dInTemp.Declare
+	V.Local.dOutTemp.Declare
+	V.Local.iMinutes.Declare
+	V.Local.iTotalMinutes.Declare
+	V.Local.iHours.Declare
+	V.Local.fHours.Declare
+	V.Local.fTotalHours.Declare
+	V.Local.dDate.Declare
+	V.Local.sFilter.Declare
+	V.Local.fTemp.Declare
+	V.Local.sTemp.Declare
+	V.Local.sMonday.Declare
+	V.Local.sTuesday.Declare
+	V.Local.sWednesday.Declare
+	V.Local.sThursday.Declare
+	V.Local.sFriday.Declare
+	V.Local.sSaturday.Declare
+	V.Local.sSunday.Declare
+	V.Local.sTotal.Declare
+	
+	'get employee
+	F.Intrinsic.Control.If(v.Global.bAdminMode)
+		V.Local.sEmployee.Set(V.Screen.F_Timesheet!txtEmployee.Text.Trim)
+	F.Intrinsic.Control.Else
+		F.Global.Security.GetEmpNoFromUser(V.Global.sUser, V.Local.sEmployee)
+		F.Intrinsic.Control.If(V.Local.sEmployee.IsNoReturn)
+			F.Intrinsic.String.Build("No employee tied to the user '{0}', clock in time will not be pulled in.", V.Global.sUser, V.Local.sMessage)
+			F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+
+			f.Intrinsic.Variable.AddRV("fMon",0)
+			f.Intrinsic.Variable.AddRV("fTues",0)
+			f.Intrinsic.Variable.AddRV("fWed",0)
+			f.Intrinsic.Variable.AddRV("fThur",0)
+			f.Intrinsic.Variable.AddRV("fFri",0)
+			f.Intrinsic.Variable.AddRV("fSat",0)
+			f.Intrinsic.Variable.AddRV("fSun",0)
+			f.Intrinsic.Variable.AddRV("fTotal",0)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	'get date range
+	V.Local.dStartDate.Set(V.Screen.F_Timesheet!dtpWeek.Value)
+	F.Intrinsic.Date.DateAdd("D", 6, V.Local.dStartDate, V.Local.dEndDate)
+	
+	'get data
+	F.Intrinsic.String.Build("select CHARGE_DATE, DATE_IN, DATE_OUT, IsNull(HOURS_HH, 0) as HOURS_HH, IsNull(HOURS_MM, 0) as HOURS_MM, OUT_TS_MIN, IN_TS_MIN, TIME_IN, TIME_OUT from V_TIME_ATTENDANCE where CHARGE_DATE between '{0}' and '{1}' and EMPLOYEE = '{2}'", V.Local.dStartDate.FormatYYYY-MM-DD, V.Local.dEndDate.FormatYYYY-MM-DD, V.Local.sEmployee, V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtClock", "Con", V.Local.sSQL)
+	
+	'if still clocked in will need to calculate
+	'currently I'm assuming there's no overnight
+	F.Data.DataTable.AddColumn("dtClock", "Hours", "Long", 0)
+	F.Data.DataTable.AddColumn("dtClock", "Minutes", "Long", 0)
+	F.Data.DataTable.AddColumn("dtClock", "Curr_Hours_Float", "Float", 0)
+	F.Data.DataTable.AddColumn("dtClock", "Total_Minutes", "Long", 0)
+	F.Data.DataView.Create("dtClock", "dvClockedIn", 22, "DATE_OUT = '1900-01-01'", "")
+	
+	F.Intrinsic.Control.For(V.Local.iCounter, 0, V.DataView.dtClock!dvClockedIn.RowCount--, 1)
+		V.Local.dInTemp.Set(V.DataView.dtClock!dvClockedIn(V.Local.iCounter).Time_In!FieldVal)
+		V.Local.dOutTemp.Set(V.Ambient.Time)
+		F.Intrinsic.Date.DateDiff("N", V.Local.dInTemp, V.Local.dOutTemp, V.Local.iTotalMinutes)
+		F.Intrinsic.Math.Mod(V.Local.iTotalMinutes, 60, V.Local.iMinutes)
+		F.Intrinsic.Math.Div(V.Local.iTotalMinutes, 60, V.Local.fHours)
+		F.Intrinsic.Math.Round(V.Local.fHours, 0, V.Local.iHours)
+		F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+		F.Data.DataView.SetValue("dtClock", "dvClockedIn", V.Local.iCounter, "Total_Minutes", V.Local.iTotalMinutes, "Hours", V.Local.iHours, "Minutes", V.Local.iMinutes, "Curr_Hours_Float", V.Local.fHours)
+		
+	F.Intrinsic.Control.Next(V.Local.iCounter)
+	F.Data.DataView.Close("dtClock", "dvClockedIn")
+	
+	F.Data.DataTable.AddExpressionColumn("dtClock", "Prev_Hours_Float", "Float", "[HOURS_HH] + ([HOURS_MM] / 60)")
+	F.Data.DataTable.AddExpressionColumn("dtClock", "Hours_Float", "Float", "[Prev_Hours_Float] + [Curr_Hours_Float]")
+	
+	F.Data.DataTable.AddColumn("dtClock", "FInal_Time", "Float")
+	F.Data.DataTable.SetValueFormat("dtClock", -1, "Hours_Float", "Final_Time", "##############.00")
+	
+	V.Local.dDate.Set(V.Local.dStartDate)
+	V.Local.fTotalHours.Redim(0, 7)
+	F.Intrinsic.Control.For(V.Local.iCounter, 0, 6, 1)
+		F.Intrinsic.String.Build("CHARGE_DATE = '{0}'", V.Local.dDate, V.Local.sFilter)
+		F.Data.DataTable.Compute("dtClock", "Sum(Final_Time)", V.Local.sFilter, V.Local.fHours)
+		F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+		V.Local.fTotalHours(V.Local.iCounter).Set(V.Local.fHours)
+		F.Intrinsic.Date.DateAdd("d", 1, V.Local.dDate, V.Local.dDate)
+	F.Intrinsic.Control.Next(V.Local.iCounter)
+	F.Data.DataTable.Compute("dtClock", "Sum(Final_Time)", "", V.Local.fHours)
+	F.Intrinsic.Math.Round(V.Local.fHours, 2, V.Local.fHours)
+	V.Local.fTotalHours(7).Set(V.Local.fHours)
+	
+	'Exergy wants the clock in time to count down to 0 (cancel out) as bucket time is entered
+	V.Local.fTemp.Set(V.Screen.F_Timesheet!txtMonHrs.Text.Trim)
+	F.Intrinsic.Math.Sub(V.Local.fTotalHours(0), V.Local.fTemp, V.Local.fTotalHours(0))
+	
+	V.Local.fTemp.Set(V.Screen.F_Timesheet!txtTuesHrs.Text.Trim)
+	F.Intrinsic.Math.Sub(V.Local.fTotalHours(1), V.Local.fTemp, V.Local.fTotalHours(1))
+	
+	V.Local.fTemp.Set(V.Screen.F_Timesheet!txtWedHrs.Text.Trim)
+	F.Intrinsic.Math.Sub(V.Local.fTotalHours(2), V.Local.fTemp, V.Local.fTotalHours(2))
+	
+	V.Local.fTemp.Set(V.Screen.F_Timesheet!txtThurHrs.Text.Trim)
+	F.Intrinsic.Math.Sub(V.Local.fTotalHours(3), V.Local.fTemp, V.Local.fTotalHours(3))
+	
+	V.Local.fTemp.Set(V.Screen.F_Timesheet!txtFriHrs.Text.Trim)
+	F.Intrinsic.Math.Sub(V.Local.fTotalHours(4), V.Local.fTemp, V.Local.fTotalHours(4))
+	
+	V.Local.fTemp.Set(V.Screen.F_Timesheet!txtSatHrs.Text.Trim)
+	F.Intrinsic.Math.Sub(V.Local.fTotalHours(5), V.Local.fTemp, V.Local.fTotalHours(5))
+	
+	V.Local.fTemp.Set(V.Screen.F_Timesheet!txtSunHrs.Text.Trim)
+	F.Intrinsic.Math.Sub(V.Local.fTotalHours(6), V.Local.fTemp, V.Local.fTotalHours(6))
+	
+	V.Local.fTemp.Set(V.Screen.F_Timesheet!txtTotHrs.Text.Trim)
+	F.Intrinsic.Math.Sub(V.Local.fTotalHours(7), V.Local.fTemp, V.Local.fTotalHours(7))
+	
+	F.Data.DataTable.Close("dtClock")
+	
+	f.Intrinsic.Variable.AddRV("fMon",V.Local.fTotalHours(0))
+	f.Intrinsic.Variable.AddRV("fTues",V.Local.fTotalHours(1))
+	f.Intrinsic.Variable.AddRV("fWed",V.Local.fTotalHours(2))
+	f.Intrinsic.Variable.AddRV("fThur",V.Local.fTotalHours(3))
+	f.Intrinsic.Variable.AddRV("fFri",V.Local.fTotalHours(4))
+	f.Intrinsic.Variable.AddRV("fSat",V.Local.fTotalHours(5))
+	f.Intrinsic.Variable.AddRV("fSun",V.Local.fTotalHours(6))
+	f.Intrinsic.Variable.AddRV("fTotal",V.Local.fTotalHours(7))
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.LoadClockInTime.End
+
+Program.Sub.f_timesheet_unload.Start
+f.Intrinsic.Control.Try		
+	V.Local.sRet.Declare
+	V.Local.sSQL.Declare
+	v.Local.bReady.Declare(Boolean)
+
+	F.Intrinsic.String.Build("Select Distinct(Flag_Ready) as Flag_Ready from GCG_6796_TIMSHT where rtrim(UPPER(USER_ID)) = '{0}' AND BEG_WEEK = '{1}' ORDER BY JOB, SUFFIX, SEQ",V.Global.sUser.Trim,V.Global.dDate.PervasiveDate,V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+	
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,"True")
+		'check against the ready flag. If it's ready marked as true we are going to disable the save and enable the print.
+		'and if we are not in admin mode.
+		F.Intrinsic.Control.If(V.Global.bAdminMode,=,False)
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValTrim!Flag_Ready,=,"True")
+				V.Local.bReady.Set(True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.con!rst.Close
+	
+	'check to see if the save varaible is true. this means changes were made and it asks if the user wants to save changes before exiting the application
+	f.Intrinsic.Control.If(v.DataTable.TempDT.RowCount,>,0,"AND",v.Global.bAdminMode,=,false,v.Global.bSaveMsg,=,true)
+		f.Intrinsic.Control.If(V.Local.bReady,=,false)
+			F.Intrinsic.UI.Msgbox("Do you wish to save existing data before exiting?","Save Data?",3,V.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sRet,=,2)
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.ElseIf(v.Local.sRet,=,6)
+				v.Global.bSaveMsg.Set(false)
+				f.Intrinsic.Control.CallSub(cmdsave_click)	
+				v.Global.bSaveMsg.Set(false)
+			f.Intrinsic.Control.Else
+				v.Global.bSaveMsg.Set(false)			
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(Unload)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.f_timesheet_unload.End
+
+Program.Sub.cmdAdd_click.Start
+f.Intrinsic.Control.Try	
+	V.Local.sSql.Declare
+	v.Local.iCheck.Declare
+	v.Local.iCheck1.Declare
+	v.Local.iCheck2.Declare
+	v.Local.sWC.Declare
+	v.Local.sJSS.Declare
+	v.Local.sJS.Declare	
+	v.Global.bSaveMsg.Set(False)
+	f.Intrinsic.Control.CallSub(cmdsave_click)
+	
+	v.Local.sWC.Set(V.Screen.F_Timesheet!txtWC.text)
+	
+	f.Intrinsic.String.UCase(v.Local.sWC,v.Local.sWC)
+	F.Intrinsic.String.Build("Select count(JOB) from V_JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQ = '{2}'",V.Screen.F_Timesheet!txtAJob.Text,V.Screen.F_Timesheet!txtASuff.Text,V.Screen.F_Timesheet!txtASeq.Text,V.Local.sSql)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,V.Local.iCheck1)
+	
+	F.Intrinsic.String.Build("Select count(JOB) from V_JOB_HEADER WHERE JOB = '{0}' AND SUFFIX = '{1}'",V.Screen.F_Timesheet!txtAJob.Text,V.Screen.F_Timesheet!txtASuff.Text,V.Local.sSql)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,V.Local.iCheck)
+	F.Intrinsic.String.Build("Select count(MACHINE) from WORKCENTERS WHERE MACHINE = '{0}'",v.Local.sWC,V.Local.sSql)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,V.Local.iCheck2)
+	
+	f.Intrinsic.Control.If(v.Global.bAdminMode)
+		V.Global.sUser.Set(v.Screen.F_Timesheet!txtUser.text.Trim)
+		v.Global.sUser.Set(v.Global.sUser.UCase)
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Screen.F_Timesheet!txtAJob.Text.trim,=,"")
+		F.Intrinsic.UI.Msgbox("No job selected or entered to save!","Add Job")
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Timesheet!txtASeq.Text.TRIM,=,"")
+		F.Intrinsic.UI.Msgbox("No sequence selected to save!","Select Sequence")
+	F.Intrinsic.Control.ElseIf(V.Global.sUser.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("No Employee Selected!","Select Employee")
+	F.Intrinsic.Control.ElseIf(v.Local.iCheck,=,0)
+		F.Intrinsic.UI.Msgbox("Invalid Job and Suffix entered!","Incorrect Job or Suffix")
+	F.Intrinsic.Control.ElseIf(v.Local.iCheck1,=,0)
+		F.Intrinsic.UI.Msgbox("Invalid Sequence entered!","Incorrect Sequence")
+	F.Intrinsic.Control.ElseIf(v.Local.iCheck2,=,0)
+		F.Intrinsic.UI.Msgbox("Invalid Work Center entered!","Incorrect Work Center")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Select * from GCG_6796_TIMSHT where rtrim(UPPER(USER_ID)) = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND SEQ = '{3}' AND BEG_WEEK = '{4}'",V.Global.sUser.Trim,V.Screen.F_Timesheet!txtAJob.Text,V.Screen.F_Timesheet!txtASuff.Text,V.Screen.F_Timesheet!txtASeq.Text,V.Global.dDate.PervasiveDate,V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+			F.ODBC.con!rst.AddNew
+			F.ODBC.con!rst.Set!USER_ID(V.Global.sUser)
+			F.ODBC.con!rst.Set!JOB(V.Screen.F_Timesheet!txtAJob.Text)
+			F.ODBC.con!rst.Set!SUFFIX(V.Screen.F_Timesheet!txtASuff.Text)
+			F.ODBC.con!rst.Set!SEQ(V.Screen.F_Timesheet!txtASeq.Text)
+			F.ODBC.con!rst.Set!WC(v.Local.sWC)
+			F.ODBC.con!rst.Set!BEG_WEEK(V.Global.dDate.PervasiveDate)
+			F.ODBC.con!rst.Set!SUN_HRS(0)
+			F.ODBC.con!rst.Set!SUN_NOTES("")
+			F.ODBC.con!rst.Set!MON_HRS(0)
+			F.ODBC.con!rst.Set!MON_NOTES("")
+			F.ODBC.con!rst.Set!TUES_HRS(0)
+			F.ODBC.con!rst.Set!TUES_NOTES("")
+			F.ODBC.con!rst.Set!WED_HRS(0)
+			F.ODBC.con!rst.Set!WED_NOTES("")
+			F.ODBC.con!rst.Set!THUR_HRS(0)
+			F.ODBC.con!rst.Set!THUR_NOTES("")
+			F.ODBC.con!rst.Set!FRI_HRS(0)
+			F.ODBC.con!rst.Set!FRI_NOTES("")
+			F.ODBC.con!rst.Set!SAT_HRS(0)
+			F.ODBC.con!rst.Set!SAT_NOTES("")
+			F.ODBC.con!rst.Set!UPDATED(0)
+			F.ODBC.con!rst.Set!Flag_Ready(0)
+			f.intrinsic.String.Concat(V.ODBC.con!rst.FieldVal!JOB,V.ODBC.con!rst.FieldVal!SUFFIX,V.ODBC.con!rst.FieldVal!SEQ,v.Local.sJSS)
+			f.intrinsic.String.Concat(V.ODBC.con!rst.FieldVal!JOB,V.ODBC.con!rst.FieldVal!SUFFIX,v.Local.sJS)
+			f.Data.DataTable.AddRow("TempDT","User_ID",v.Global.sUser,"JSS",v.Local.sJSS,"JS",v.Local.sJS,"Job",V.ODBC.con!rst.FieldValTrim!JOB,"Suffix",V.ODBC.con!rst.FieldValTrim!SUFFIX,"SEQ",V.ODBC.con!rst.FieldValTrim!SEQ,"WC",V.ODBC.con!rst.FieldValTrim!WC,"SUN_HRS",V.ODBC.con!rst.FieldVal!SUN_HRS,"MON_HRS",V.ODBC.con!rst.FieldVal!MON_HRS,"TUES_HRS",V.ODBC.con!rst.FieldVal!TUES_HRS,"WED_HRS",V.ODBC.con!rst.FieldVal!WED_HRS,"THUR_HRS",V.ODBC.con!rst.FieldVal!THUR_HRS,"FRI_HRS",V.ODBC.con!rst.FieldVal!FRI_HRS,"SAT_HRS",V.ODBC.con!rst.FieldVal!SAT_HRS,"UPDATED",V.ODBC.con!rst.FieldVal!UPDATED,"FLAG_READY",V.ODBC.con!rst.FieldVal!FLAG_READY,"Wrapper","A","Sun_Time","0:00","Mon_Time","0:00","Tues_Time","0:00","Wed_Time","0:00","Thur_Time","0:00","Fri_Time","0:00","Sat_Time","0:00")
+			f.Data.Datatable.FillFromDictionary("TempDT","DescDict","JS","Description")
+			f.Data.Datatable.FillFromDictionary("TempDT","FGDict","JS","Part")
+			f.Data.Datatable.FillFromDictionary("TempDT","dictSeqDesc", "JSS", "SEQ_DESCRIPTION")
+			F.ODBC.con!rst.Update
+			F.ODBC.con!rst.Close
+			Gui.F_Timesheet.txtAJob.Text("")
+			Gui.F_Timesheet.txtASuff.Text("")
+			Gui.F_Timesheet.txtASeq.Text("")
+			Gui.F_Timesheet.txtWC.Text("")	
+			f.Intrinsic.Control.CallSub(ComputeTotals)
+		F.Intrinsic.Control.Else
+			F.ODBC.con!rst.Close
+			F.Intrinsic.UI.Msgbox("Job sequence already exists on timesheet!","Save Error")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdAdd_click.End
+
+Program.Sub.cmdSave_click.Start
+f.Intrinsic.Control.Try	
+	V.Local.i.Declare
+	V.Local.sSql.Declare
+	V.Local.iRow.Declare
+	V.Local.sRow.Declare
+	V.Local.sRowArray.Declare
+	V.Local.sMap.Declare
+	
+	'f.Data.DataTable.Clone("TempDT","SaveDT",true)
+	F.Data.DataView.ToDataTable("TempDT","MainVw","SavinDT")
+	
+	f.Data.DataView.Create("SavinDT","SaveVw",22,"UPDATED = 0","")	
+	F.Data.DataView.ToDataTable("SavinDT","SaveVw","SaveDT")
+	
+	f.Data.DataTable.AddColumn("SaveDT","BEG_WEEK","STRING")
+	F.Data.DataTable.SetValue("SaveDT",-1,"BEG_WEEK",V.Global.dDate.PervasiveDate)
+	
+	v.Local.sMap.set("USER_ID@!@USER_ID*!*JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQ@!@SEQ*!*BEG_WEEK@!@BEG_WEEK*!*WC@!@WC*!*SUN_HRS@!@SUN_HRS*!*MON_HRS@!@MON_HRS*!*TUES_HRS@!@TUES_HRS*!*WED_HRS@!@WED_HRS*!*THUR_HRS@!@THUR_HRS*!*FRI_HRS@!@FRI_HRS*!*SAT_HRS@!@SAT_HRS*!*UPDATED@!@UPDATED*!*FLAG_READY@!@FLAG_READY*!*SUN_NOTES@!@SUN_NOTES*!*MON_NOTES@!@MON_NOTES*!*TUES_NOTES@!@TUES_NOTES*!*WED_NOTES@!@WED_NOTES*!*THUR_NOTES@!@THUR_NOTES*!*FRI_NOTES@!@FRI_NOTES*!*SAT_NOTES@!@SAT_NOTES")
+	Function.Data.DataTable.SaveToDB("SaveDT","con","GCG_6796_TIMSHT","USER_ID*!*JOB*!*SUFFIX*!*SEQ*!*BEG_WEEK",256,v.Local.sMap)
+	
+	F.Data.DataTable.Close("SaveDT")
+	F.Data.DataTable.Close("SavinDT")
+	
+	f.Intrinsic.Control.If(v.Global.bSaveMsg,=,true)
+		F.Intrinsic.UI.Msgbox("All records saved!","Save Records")
+		v.Global.bSaveMsg.Set(false)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(ComputeTotals)
+	
+	v.Global.bSaveMsg.Set(false)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_click.End
+
+Program.Sub.cmdLockPostToGSS_Click.Start
+f.Intrinsic.Control.Try	
+	V.Local.sSql.Declare
+	V.Local.iRet.Declare
+	V.Local.sEmp.Declare
+	V.Local.sDay.Declare
+	V.Local.sFile.Declare
+	V.Local.sExecute.Declare
+	V.Local.sRet.Declare
+	V.Local.sQuery.Declare
+	
+	
+	'update to the update.
+	'We now have a new checkbox that has the option to update ALL employees whose times are ready Flag_Ready for the selected Week.
+	'the quote says jack about showing all employees within the grid when they want to do a global update. so being the good guy I'm going to wrn them say hay... this will
+	'update all employees that are ready. Since you have that checked.
+	f.Data.DataTable.DeleteRow("JB0455")
+	f.Data.DataTable.AcceptChanges("JB0455")
+	
+	F.Intrinsic.Control.If(V.Global.iRun,<,1)
+		F.Intrinsic.Math.Add(V.Global.iRun,1,V.Global.iRun)
+		Gui.F_Timesheet.dtpWeek.Enabled(False)
+		F.Intrinsic.Control.If(V.Global.bAdminMode,=,True,"AND",V.Screen.F_Timesheet!chkUpdateAllEmployees.Value,=,1)
+			F.Intrinsic.UI.Msgbox("Are you sure you want to post this week's hours to Global Shop for ALL EMPLOYEES whose records are marked as READY?","Update Records",4,V.Local.iRet)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Are you sure you want to post this week's hours to Global Shop?","Update Records",4,V.Local.iRet)
+		F.Intrinsic.Control.EndIf
+		V.Global.iChk.Set(1)
+		F.Intrinsic.Control.CallSub(Cmdsave_click)
+		V.Global.iChk.Set(0)
+	
+		'Yes
+		F.Intrinsic.Control.If(V.Local.iRet,=,6)
+			F.Intrinsic.Control.If(V.Screen.F_Timesheet!chkUpdateAllEmployees.Value,=,1)
+				F.Intrinsic.String.Build("Select Distinct UPPER(user_ID) AS user_ID from GCG_6796_TIMSHT Where BEG_WEEK = '{0}' And Flag_Ready = '1' and Updated = '0' Order By User_ID",V.Global.dDate.PervasiveDate,V.Local.sSql)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("Select Distinct UPPER(USER_ID) as USER_ID from GCG_6796_TIMSHT where rtrim(UPPER(USER_ID)) = '{0}' AND BEG_WEEK = '{1}' And Flag_ready = '1' and Updated = '0'",V.Global.sUser.Trim,V.Global.dDate.PervasiveDate,V.Local.sSql)
+			F.Intrinsic.Control.EndIf
+	
+			F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+	
+			F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+				F.Intrinsic.UI.Msgbox("No saved records to update!","Save Records")
+			
+			F.Intrinsic.Control.Else
+		
+		'we have to loop through our recordset, requery the info cause all we want is the current line, then do it all over again.
+					f.Intrinsic.UI.InvokeWaitDialog("Posting, please wait...")
+					F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+				
+						F.Intrinsic.String.Build("Select EMPLOYEE from V_EMPLOYEE_MSTR where PR_USER_ID = '{0}'",V.ODBC.con!rst.FieldValTrim!User_ID,V.Local.sQuery)
+						F.ODBC.Connection!con.OpenLocalRecordsetRO("rstEmp",V.Local.sQuery)
+						F.Intrinsic.Control.If(V.ODBC.con!rstEmp.EOF,=,False)
+							V.Local.sEmp.Set(V.ODBC.con!rstEmp.FieldValTrim!Employee)
+						F.Intrinsic.Control.Else
+							F.Intrinsic.String.Build("Employee ID can't be found for User: {0}. Please select now.",V.ODBC.con!rst.FieldValTrim!User_ID,V.Local.sQuery)
+							F.Intrinsic.UI.Msgbox(V.Local.sQuery)
+							F.Intrinsic.UI.Browser(51,"",V.Local.sRet)
+							F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"***CANCEL***")
+								F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+								V.Local.sEmp.Set(V.Local.sRet(0).Trim)
+							F.Intrinsic.Control.Else
+								V.Local.sEmp.Set("")
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.EndIf
+						F.ODBC.con!rstEmp.Close
+	
+						F.Intrinsic.Control.If(V.Local.sEmp.Trim,<>,"")
+							F.Intrinsic.Control.If(v.DataTable.DTtime.Exists,=,True)
+								f.Data.DataTable.Close("DTtime")
+							f.Intrinsic.Control.EndIf
+							
+							F.Intrinsic.String.Build("select RTRIM(User_Id) as User_ID,JOB,SUFFIX,SEQ,JOB+SUFFIX+SEQ as JSS,JOB+SUFFIX as JS,'' as DESCRIPTION,'' as PART,WC,BEG_WEEK,MON_HRS,MON_NOTES,TUES_HRS,TUES_NOTES,WED_HRS,WED_NOTES,THUR_HRS ,THUR_NOTES,FRI_HRS,FRI_NOTES,SAT_HRS,SAT_NOTES,SUN_HRS,SUN_NOTES,UPDATED,FLAG_READY,'A' as Wrapper ,Convert(Cast(Sun_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Sun_Hrs -  Cast(Sun_Hrs as Integer))* 60,0),SQL_Char),2) as Sun_Time ,Convert(Cast(Mon_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Mon_Hrs -  Cast(Mon_Hrs as Integer))* 60,0),SQL_Char),2) as Mon_Time ,Convert(Cast(Tues_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Tues_Hrs -  Cast(Tues_Hrs as Integer))* 60,0),SQL_Char),2) as Tues_Time ,Convert(Cast(Wed_Hrs as Integer),SQL_Char) + ':' +  Right('00' +  Convert(Round((Wed_Hrs -  Cast(Wed_Hrs as Integer))* 60,0),SQL_Char),2) as Wed_Time ,Convert(Cast(Thur_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Thur_Hrs -  Cast(Thur_Hrs as Integer))* 60,0),SQL_Char),2) as Thur_Time ,Convert(Cast(Fri_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Fri_Hrs -  Cast(Fri_Hrs as Integer))* 60,0),SQL_Char),2) as Fri_Time ,Convert(Cast(Sat_Hrs as Integer),SQL_Char) + ':' +  Right('00' + Convert(Round((Sat_Hrs -  Cast(Sat_Hrs as Integer))* 60,0),SQL_Char),2) as Sat_Time from GCG_6796_TIMSHT where RTRIM(UPPER(USER_ID)) = '{0}' AND BEG_WEEK = '{1}' And Flag_ready = '1' and updated = '0'",V.ODBC.con!rst.FieldValTrim!USER_ID,V.Global.dDate.PervasiveDate,V.Local.sSql)		
+							f.Data.DataTable.CreateFromSQL("DTtime","con",v.local.sSql,true)
+							
+							f.Intrinsic.UI.ChangeWaitStatus("Posting Monday...")
+							V.Local.sDay.Set("Mon")							
+							F.Intrinsic.Control.CallSub(Buildfile,"Day",V.Local.sDay,"Emp",V.Local.sEmp,"Col","MON_HRS","Col2","MON_TIME")
+							
+							f.Intrinsic.UI.ChangeWaitStatus("Posting Tuesday...")
+							V.Local.sDay.Set("Tues")							
+							F.Intrinsic.Control.CallSub(Buildfile,"Day",V.Local.sDay,"Emp",V.Local.sEmp,"Col","TUES_HRS","Col2","TUES_TIME")
+							
+							f.Intrinsic.UI.ChangeWaitStatus("Posting Wednesday...")
+							V.Local.sDay.Set("Wed")							
+							F.Intrinsic.Control.CallSub(Buildfile,"Day",V.Local.sDay,"Emp",V.Local.sEmp,"Col","WED_HRS","Col2","WED_TIME")
+							
+							f.Intrinsic.UI.ChangeWaitStatus("Posting Thursday...")
+							V.Local.sDay.Set("Thur")							
+							F.Intrinsic.Control.CallSub(Buildfile,"Day",V.Local.sDay,"Emp",V.Local.sEmp,"Col","THUR_HRS","Col2","THUR_TIME")
+							
+							f.Intrinsic.UI.ChangeWaitStatus("Posting Friday...")
+							V.Local.sDay.Set("Fri")							
+							F.Intrinsic.Control.CallSub(Buildfile,"Day",V.Local.sDay,"Emp",V.Local.sEmp,"Col","FRI_HRS","Col2","FRI_TIME")
+							
+							f.Intrinsic.UI.ChangeWaitStatus("Posting Saturday...")
+							V.Local.sDay.Set("Sat")							
+							F.Intrinsic.Control.CallSub(Buildfile,"Day",V.Local.sDay,"Emp",V.Local.sEmp,"Col","SAT_HRS","Col2","SAT_TIME")
+							
+							f.Intrinsic.UI.ChangeWaitStatus("Posting Sunday...")
+							V.Local.sDay.Set("Sun")							
+							F.Intrinsic.Control.CallSub(Buildfile,"Day",V.Local.sDay,"Emp",V.Local.sEmp,"Col","SUN_HRS","Col2","SUN_TIME")								
+							
+							f.Intrinsic.UI.ChangeWaitStatus("Updating custom table...")
+							F.Intrinsic.String.Build("Update GCG_6796_Timsht Set Updated = '1' Where Beg_Week = '{0}' And UPPER(USER_ID) = '{1}'",V.Global.dDate.PervasiveDate,V.ODBC.con!rst.FieldValTrim!User_ID,V.Local.sSql)
+							
+							F.ODBC.Connection!con.Execute(V.Local.sSql)
+						f.Intrinsic.Control.Else
+							f.Intrinsic.UI.Msgbox("Invalid Employee number.")
+							V.Global.iRun.Set(0)
+							Gui.F_Timesheet.dtpWeek.Enabled(True)							
+							f.Intrinsic.Control.ExitSub						
+						F.Intrinsic.Control.EndIf
+	
+						F.ODBC.con!rst.MoveNext
+					F.Intrinsic.Control.Loop
+					gui.F_Timesheet.cmdLockPostToGSS.Enabled(False)
+					GUI.F_Timesheet.gsfgTimesheet.Enabled(False)
+					
+					F.Intrinsic.UI.CloseWaitDialog
+	
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rst.close
+		F.Intrinsic.Control.EndIf
+	
+		V.Global.iRun.Set(0)
+		Gui.F_Timesheet.dtpWeek.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	
+	GUI.F_Timesheet..AlwaysOnTop(True)
+	GUI.F_Timesheet..AlwaysOnTop(False)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdLockPostToGSS_Click.End
+
+Program.Sub.BuildFile.Start
+f.Intrinsic.Control.Try	
+	V.Local.dDate.Declare
+	V.Local.sDate.Declare
+	V.Local.iDay.Declare
+	V.Local.sDay.Declare
+	V.Local.sBegTime.Declare
+	V.Local.i.Declare
+	V.Local.sTime.Declare
+	V.Local.sStart.Declare
+	V.Local.sStop.Declare
+	V.Local.sStartHH.Declare
+	V.Local.sStartMM.Declare
+	V.Local.sStopHH.Declare
+	V.Local.sStopMM.Declare
+	V.Local.sSql.Declare
+	V.Local.sJob.Declare
+	V.Local.sSuff.Declare
+	V.Local.sSeq.Declare
+	V.Local.sWC.Declare
+	v.Local.fMm.Declare
+	v.Local.sRet.Declare
+
+	F.Intrinsic.Control.If(V.Args.Day,=,"Mon")
+		V.Local.dDate.Set(V.Global.dDate)
+		V.Local.iDay.Set(1)
+		V.Local.sDay.Set("START_MON")
+	F.Intrinsic.Control.ElseIf(V.Args.Day,=,"Tues")
+		F.Intrinsic.Date.DateAdd("D",1,V.Global.dDate,V.Local.dDate)
+		V.Local.iDay.Set(2)
+		V.Local.sDay.Set("START_TUE")
+	F.Intrinsic.Control.ElseIf(V.Args.Day,=,"Wed")
+		F.Intrinsic.Date.DateAdd("D",2,V.Global.dDate,V.Local.dDate)
+		V.Local.iDay.Set(3)
+		V.Local.sDay.Set("START_WED")
+	F.Intrinsic.Control.ElseIf(V.Args.Day,=,"Thur")
+		F.Intrinsic.Date.DateAdd("D",3,V.Global.dDate,V.Local.dDate)
+		V.Local.iDay.Set(4)
+		V.Local.sDay.Set("START_THR")
+	F.Intrinsic.Control.ElseIf(V.Args.Day,=,"Fri")
+		F.Intrinsic.Date.DateAdd("D",4,V.Global.dDate,V.Local.dDate)
+		V.Local.iDay.Set(5)
+		V.Local.sDay.Set("START_FRI")
+	F.Intrinsic.Control.ElseIf(V.Args.Day,=,"Sat")
+		F.Intrinsic.Date.DateAdd("D",5,V.Global.dDate,V.Local.dDate)
+		V.Local.iDay.Set(6)
+		V.Local.sDay.Set("START_SAT")
+	F.Intrinsic.Control.ElseIf(V.Args.Day,=,"Sun")
+		F.Intrinsic.Date.DateAdd("D",6,V.Global.dDate,V.Local.dDate)
+		V.Local.iDay.Set(7)
+		V.Local.sDay.Set("START_SUN")
+	F.Intrinsic.Control.EndIf
+	
+	'Select from Employee_Shift. There is record if setup is made at the On Line > File > Employee Shift Maintenance
+	F.Intrinsic.String.Build("SELECT Top 1 SHIFT,DEPT,F_GROUP FROM EMPLOYEE_SHIFT WHERE rtrim(EMPLOYEE) = '{0}' AND DAY = '{1}'",V.Args.Emp.Trim,V.Local.iDay,V.Local.sSql)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,v.Local.sRet)
+	'There is record
+	F.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		F.Intrinsic.String.Build("SELECT Top 1 {0} FROM LUNCH_SHIFT WHERE rtrim(SHIFT) = '{1}' AND rtrim(DEPT) = '{2}' AND rtrim(SHIFT_GROUP) = '{3}'",V.Local.sDay,v.Local.sRet(0).Trim,v.Local.sRet(1).Trim,v.Local.sRet(2).Trim,V.Local.sSql)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,v.Local.sRet)
+		F.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+			V.Local.sStop.Set(v.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sStop.Trim,=,"")				
+				v.Local.sStop.Set("0800")
+			f.Intrinsic.Control.EndIf				
+		f.Intrinsic.Control.Else
+			v.Local.sStop.Set("0800")
+		F.Intrinsic.Control.EndIf
+	
+	'Select from Employee_Master
+	F.Intrinsic.Control.Else
+	
+		F.Intrinsic.String.Build("SELECT Top 1 SHIFT,DEPT_EMPLOYEE,PR_BALANCE_GROUP FROM EMPLOYEE_MSTR WHERE rtrim(EMPLOYEE) = '{0}'",V.Args.Emp.Trim,V.Local.sSql)
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,v.Local.sRet)
+		'There is record
+		F.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+			f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+			F.Intrinsic.String.Build("SELECT Top 1 {0} FROM LUNCH_SHIFT WHERE rtrim(SHIFT) = '{1}' AND rtrim(DEPT) = '{2}' AND rtrim(SHIFT_GROUP) = '{3}'",V.Local.sDay,v.Local.sRet(0).Trim,v.Local.sRet(1).Trim,v.Local.sRet(2).Trim,V.Local.sSql)
+			f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,v.Local.sRet)
+			F.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)			
+				V.Local.sStop.Set(v.Local.sRet)
+				f.Intrinsic.Control.If(v.Local.sStop.Trim,=,"")
+					v.Local.sStop.Set("0800")
+				f.Intrinsic.Control.EndIf				
+			f.Intrinsic.Control.Else
+				V.Local.sStop.Set("0800")
+			F.Intrinsic.Control.EndIf				
+		F.Intrinsic.Control.Else
+			V.Local.sStop.Set("0800")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	
+	'So far, at this point the Stop time is in HHMM
+	
+	F.Intrinsic.Control.For(V.Local.i,0,v.DataTable.DTtime.RowCount--,1)
+		F.Intrinsic.Control.If(v.DataTable.DTtime(V.Local.i).[V.Args.Col]!FieldValFloat,<>,0)
+			
+			'Get Start Time, which is the Stop time of the previous iteration (format is HHMM)
+			V.Local.sStart.Set(V.Local.sStop)				
+			F.Intrinsic.String.Right(V.Local.sStart,2,V.Local.sStartMM)
+			F.Intrinsic.String.Left(V.Local.sStart,2,V.Local.sStartHH)
+			
+			'Get time in format of HH:NN
+			F.Intrinsic.String.Split(v.DataTable.DTtime(V.Local.i).[V.Args.Col2]!FieldValTrim,":",v.Local.sTime)
+			
+			'Add time Start + sTime
+			F.Intrinsic.Math.Add(V.Local.sStartHH,v.Local.sTime(0),V.Local.sStopHH)
+			F.Intrinsic.Math.Add(V.Local.sStartMM,V.Local.sTime(1),V.Local.sStopMM)
+			
+			F.Intrinsic.Control.If(V.Local.sStopMM.Long,>=, 60)
+				F.Intrinsic.Math.Add(V.Local.sStopHH,1,V.Local.sStopHH)
+				F.Intrinsic.Math.Sub(V.Local.sStopMM,60,V.Local.sStopMM)
+			F.Intrinsic.Control.EndIf
+	
+			'Format Stop
+			F.Intrinsic.String.Format(V.Local.sStopHH,"00",V.Local.sStopHH)
+			F.Intrinsic.String.Format(V.Local.sStopMM,"00",V.Local.sStopMM)
+			F.Intrinsic.String.Build("{0}{1}",V.Local.sStopHH,V.Local.sStopMM,V.Local.sStop)
+			
+			'This case will never happen as there is validation at the cellvalue change event, but keep here for safety
+			F.Intrinsic.Control.If(V.Local.sStop,=,"2400")
+				V.Local.sStop.Set("2359")
+			F.Intrinsic.Control.EndIf
+			
+			'Get other values
+			V.Local.sJob.Set(v.DataTable.DTtime(V.Local.i).Job!FieldVal)
+			V.Local.sSuff.Set(v.DataTable.DTtime(V.Local.i).Suffix!FieldVal)
+			V.Local.sSeq.Set(v.DataTable.DTtime(V.Local.i).Seq!FieldVal)
+			V.Local.sWC.Set(v.DataTable.DTtime(V.Local.i).WC!FieldVal)
+			F.Intrinsic.String.Format(V.Local.dDate,"MMDDYY",V.Local.sDate)
+			
+			'Build and upload 1 record at a time
+			f.Data.DataTable.DeleteRow("JB0455")
+			f.Data.DataTable.AcceptChanges("JB0455")			
+			F.Data.DataTable.AddRow("JB0455","Date",V.Local.sDate,"Employee",V.Args.Emp,"Job",V.Local.sJob,"Suffix",V.Local.sSuff,"Seq",V.Local.sSeq,"WC",V.Local.sWC,"Closed","N","Indirect","D","StartTime",V.Local.sStart,"StopTime",V.Local.sStop,"RateType","R","GoodPcs","0","ScrapPcs","0")			
+			F.Intrinsic.Control.CallSub(JB0455Sync)	
+		
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.BuildFile.End
+
+Program.Sub.cmdReadyForApproval_Click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sRet.Declare
+	V.Local.sSQL.Declare
+	v.Local.bReady.Declare(Boolean)
+	v.Local.iFlag.Declare
+	V.Local.sHold.Declare
+	
+	F.Intrinsic.Control.If(V.Global.sUSer.Trim,=,"")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.TempDT.RowCount,>,0,"AND",v.Global.bAdminMode,=,false)
+		f.Intrinsic.UI.Msgbox("Do you wish to flag the displayed time as Ready for Approval?","Flag as ready?",4,v.Local.iFlag)
+		f.Intrinsic.Control.If(v.Local.iFlag,=,v.Ambient.MsgBoxYes)
+			f.Intrinsic.Control.CallSub(cmdsave_click)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Update GCG_6796_TIMSHT Set FLAG_READY = '1' Where rtrim(UPPER(USER_ID)) = '{0}' And Beg_Week = '{1}'",V.Global.sUser.Trim,V.Global.dDate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	f.Data.DataTable.SetValue("TempDT",-1,"Flag_ready",true)
+	
+	F.Intrinsic.String.Build("Records with date {0} and User {1} have been marked as Ready.",V.Global.dDate,V.Global.sUser,V.Local.sHold)
+	f.Intrinsic.UI.Msgbox(v.Local.sHold)
+	
+	gui.F_Timesheet.cmdReadyForApproval.Enabled(False)
+	gui.F_Timesheet.cmdLockPostToGSS.Enabled(true)
+	F.Intrinsic.Control.If(V.Global.bAdminMode,=,False)
+		'disable save
+		Gui.F_Timesheet.cmdSave.Enabled(False)
+		gui.F_Timesheet.cmdAddFromTemplate.Enabled(False)
+		
+		'disable the add button cause when they can adda a new job it some how re enables the save.
+		Gui.F_Timesheet.cmdAdd.Enabled(False)
+	
+		'rintGushee
+		Gui.f_TIMESHEET.cmdPrint.Enabled(True)
+		
+		'flexgridGui.F_Ti
+		Gui.F_Timesheet.gsfgTimesheet.Enabled(False)
+	
+	F.Intrinsic.Control.Else
+		GUI.F_Timesheet.cmdUnlock.Enabled(True)
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdReadyForApproval_Click.End
+
+Program.Sub.cmdUnlock_click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sSQL.Declare
+	v.Local.iCount.Declare
+	
+	F.Intrinsic.Control.If(V.Global.suSer.Trim,=,"")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Select Count(UPDATED) from GCG_6796_TIMSHT Where rtrim(UPPER(USER_ID)) = '{0}' And Beg_Week = '{1}' and UPDATED = 1",V.Global.sUser.Trim,V.Global.dDate.PervasiveDate,V.Local.sSQL)
+	f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.iCount)
+	f.Intrinsic.Control.If(v.Local.iCount,>,0)
+		f.Intrinsic.UI.Msgbox("Records have already been posted to GSS and cannot be unlocked.")
+		F.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Update GCG_6796_TIMSHT Set FLAG_READY = '0' Where rtrim(UPPER(USER_ID)) = '{0}' And Beg_Week = '{1}'",V.Global.sUser.Trim,V.Global.dDate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.UI.Msgbox("Records have been Unlocked...")
+	
+	F.Intrinsic.Control.CallSub(Load)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdUnlock_click.End
+
+Program.Sub.cmdPrint_click.Start
+f.Intrinsic.Control.Try	
+	V.Local.sSQL.Declare
+	V.Local.iRPTID.Declare
+	V.Local.sParam.Declare
+	V.Local.sVals.Declare
+	V.Local.sRet.Declare
+	
+	V.Local.sParam.Set("START_DATE*!*BIRUNID")
+	
+	F.Intrinsic.UI.InvokeWaitDialog("Printing Report...")
+	
+	F.global.BI.GetIDFromName("GCG_6796_TimeSheet.rpt",V.Local.iRPTID)
+	
+	F.Intrinsic.Control.If(V.Local.iRPTID,=,-1)
+		F.Intrinsic.UI.CloseWaitDialog
+		F.Intrinsic.UI.Msgbox("GCG_6796_Timesheet.rpt not found as an active report. Please Activate within Report Maintenance")
+	
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.BlockEvents
+	
+	F.Global.BI.GetRunID(V.Global.iBIRUNID)
+	F.Global.BI.StartLogging(V.Global.iBIRUNID,V.Local.iRptID,-1,"",V.Global.iLogID)
+	F.Intrinsic.String.Build("{0}*!*{1}",V.Global.dDate.formatYYYYMMDD,V.Global.iBIRUNID,V.Local.sVals)
+	
+	'ask user in admin mode if they want to print all ready recrods for all employees or just employee selected.
+	F.Intrinsic.Control.If(V.Global.bAdminMode,=,True)
+		'Print Records for all or just selected.")
+		F.Intrinsic.UI.Msgbox("Print ready time for ALL employees?","All Employees?",4,V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+	
+	'so we have to figure out if it's for all users or employee selected.
+	'we can only print the users ready time
+	
+	F.Intrinsic.Control.If(V.Local.sRet,=,6)
+		'tey want all users.
+		F.Intrinsic.String.Build("select UPPER(USER_ID) AS USER_ID,E.Employee,E.Name,GCG.Job,GCG.Suffix,GCG.Seq as SEQUENCE,JO.Description,WC,Sun_HRS,Mon_HRS,Tues_HRS,WED_HRS,THUR_HRS, FRI_HRS,SAT_HRS from GCG_6796_TIMSHT As GCG Left Join V_Employee_Mstr As E On GCG.USER_ID = E.PR_USER_ID Left Join V_Job_Operations AS JO On GCG.Job = JO.Job And GCG.Suffix = JO.Suffix and GCG.Seq = JO.SEQ Where Flag_Ready = '1' And BEG_WEEK = '{0}' ",V.Global.dDate.Pervasivedate,V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("select UPPER(USER_ID) AS USER_ID,E.Employee,E.Name,GCG.Job,GCG.Suffix,GCG.Seq as SEQUENCE,JO.Description,WC,Sun_HRS,Mon_HRS,Tues_HRS,WED_HRS,THUR_HRS, FRI_HRS,SAT_HRS from GCG_6796_TIMSHT As GCG Left Join V_Employee_Mstr As E On GCG.USER_ID = E.PR_USER_ID Left Join V_Job_Operations AS JO On GCG.Job = JO.Job And GCG.Suffix = JO.Suffix and GCG.Seq = JO.SEQ Where rtrim(UPPER(GCG.USER_ID)) ='{0}' And BEG_WEEK = '{1}' ",V.Global.sUser.Trim,V.Global.dDate.Pervasivedate,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	
+	f.Data.DataTable.CreateFromSQL("DTGetData","con",v.Local.sSQL)
+	F.Intrinsic.Control.if(v.DataTable.DTGetData.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("There are no records made ready for printing.")
+		f.Data.DataTable.Close("DTGetData")
+		F.Intrinsic.Control.UnBlockEvents
+		F.Intrinsic.UI.CloseWaitDialog
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("Select * from GCG_6796_TIMESHT_BI where BIRUNID = '{0}'",V.Global.iBIRUNID,v.Local.sSQL)
+		f.data.DataTable.CreateFromSQL("DTBiUpload","con",v.Local.sSQL)
+		f.Data.DataTable.RemoveColumn("DTGetData","USER_ID")
+		f.Data.DataTable.AddColumn("DTGetData","BIRUNID","Long")
+		f.Data.DataTable.SetValue("DTGetData",-1,"BIRUNID",V.Global.iBIRUNID)
+		f.Data.datatable.Merge("DTGetData","DTBiUpload",false,2)
+		f.Data.DataTable.Close("DTGetData")
+	
+		F.Intrinsic.Control.If(V.DataTable.DTBiUpload.RowCount,>,0)
+			F.ODBC.Connection!con.Execute("Delete From GCG_6796_TIMESHT_BI")
+			f.Data.DataTable.SaveToDB("DTBiUpload","con","GCG_6796_TIMESHT_BI","BIRUNID",128)
+			f.Data.DataTable.Close("DTBiUpload")
+		
+			F.Global.BI.RunReportPreProcessor(V.Global.iBIRUNID,V.Global.iLogID,V.Local.sParam,V.Local.sVals,"",-1,False,"",-1,"",-1,"","",V.Global.iBIRUNID)
+	
+		F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.endif
+	
+	F.Intrinsic.UI.CloseWaitDialog
+	
+	F.Intrinsic.Control.UnBlockEvents
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdPrint_click.End
+
+Program.Sub.cmdAddFromTemplate_Click.Start
+'V_L_D
+f.Intrinsic.Control.Try
+	v.local.sSQL.Declare
+	v.local.sMap.Declare
+	
+	f.Intrinsic.Control.If(v.Global.bAdminMode)
+		V.Global.sUser.Set(v.Screen.F_Timesheet!txtUser.text.Trim)
+		v.Global.sUser.Set(v.Global.sUser.UCase)
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Global.sUser.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("No Employee and User is selected!","Select Employee and User")
+		f.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Build("Select JOB, SUFFIX, SEQ,JOB + SUFFIX + SEQ AS JSS,JOB + SUFFIX AS JS,RTRIM(' ') as DESCRIPTION,RTRIM(WC) as WC,  CAST(0 AS DOUBLE) AS MON_HRS,CAST(' ' as LONGVARCHAR) as MON_NOTES, CAST(0 AS DOUBLE) AS TUES_HRS,CAST(' ' as LONGVARCHAR)  as TUES_NOTES, CAST(0 AS DOUBLE) AS WED_HRS,CAST(' ' as LONGVARCHAR)  as WED_NOTES, CAST(0 AS DOUBLE) AS THUR_HRS,CAST(' ' as LONGVARCHAR)  as THUR_NOTES, CAST(0 AS DOUBLE) AS FRI_HRS,CAST(' ' as LONGVARCHAR)  as FRI_NOTES, CAST(0 AS DOUBLE) AS SAT_HRS,CAST(' ' as LONGVARCHAR)  as SAT_NOTES,CAST(0 AS DOUBLE) AS SUN_HRS,CAST(' ' as LONGVARCHAR) as SUN_NOTES,CAST(0 AS BIT) AS UPDATED,CAST(0 AS BIT) AS FLAG_READY,CAST('      ' as VARCHAR) as SUN_NOTES from GCG_6796_TIMSHT_TEMP where rtrim(UPPER(USER_ID)) = '{0}' and JSS not in (Select job + suffix + seq as JSS from GCG_6796_TIMSHT where rtrim(UPPER(USER_ID)) = '{0}' AND BEG_WEEK = '{1}') ORDER BY JOB,SUFFIX, SEQ",V.Global.sUser.Trim,v.Global.dDate.PervasiveDate,V.Local.sSql)	
+	f.Data.DataTable.CreateFromSQL("TimeDT","con",V.Local.sSql,true)
+	f.Intrinsic.Control.If(v.DataTable.TimeDT.RowCount,=,0)
+		F.Data.DataTable.Close("TimeDT")
+		f.Intrinsic.ui.Msgbox("There are no Jobs that can be added in from the template.")		
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.AddColumn("TimeDT","USER_ID","STRING")
+	F.Data.DataTable.SetValue("TimeDT",-1,"USER_ID",V.Global.sUser)
+	
+	f.Data.DataTable.AddColumn("TimeDT","BEG_WEEK","STRING")
+	F.Data.DataTable.SetValue("TimeDT",-1,"BEG_WEEK",V.Global.dDate.PervasiveDate)
+	v.Local.sMap.set("USER_ID@!@USER_ID*!*JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQ@!@SEQ*!*BEG_WEEK@!@BEG_WEEK*!*WC@!@WC*!*SUN_HRS@!@SUN_HRS*!*MON_HRS@!@MON_HRS*!*TUES_HRS@!@TUES_HRS*!*WED_HRS@!@WED_HRS*!*THUR_HRS@!@THUR_HRS*!*FRI_HRS@!@FRI_HRS*!*SAT_HRS@!@SAT_HRS*!*UPDATED@!@UPDATED*!*FLAG_READY@!@FLAG_READY")
+	Function.Data.DataTable.SaveToDB("TimeDT","con","GCG_6796_TIMSHT","USER_ID*!*JOB*!*SUFFIX*!*SEQ*!*BEG_WEEK",256,v.Local.sMap)	
+	F.Data.DataTable.Close("TimeDT")
+	
+	f.Intrinsic.Control.CallSub(GridLoad)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.cmdAddFromTemplate_Click.End
+
+'****************************************Template**************************************
+Program.Sub.cmdTemplate_Click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	
+	Gui.F_Timesheet..Enabled(False)
+	F.Intrinsic.Control.CallSub(Templist)
+	Gui.F_Template..Visible(True)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdTemplate_Click.End
+
+Program.Sub.TempList.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sSql.Declare
+	V.Local.sKey.Declare
+	
+	'Loads Template listview with the template data found in ATG_TIMSHEET_TEMP
+	Gui.F_Template.lvwTemp.ClearItems
+	F.Intrinsic.String.Build("Select * from GCG_6796_TIMSHT_TEMP where rtrim(UPPER(USER_ID)) = '{0}' ORDER BY JOB,SUFFIX,SEQ",V.Global.sUser.Trim,V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+	
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+		F.Intrinsic.String.Build("{0}*!*{1}*!*{2}",V.ODBC.con!rst.FieldValTrim!JOB,V.ODBC.con!rst.FieldValTrim!SUFFIX,V.ODBC.con!rst.FieldValTrim!SEQ,V.Local.sKey)
+		Gui.F_Template.lvwTemp.AddListItem(V.Local.sKey,V.ODBC.con!rst.FieldValTrim!JOB)
+		Gui.F_Template.lvwTemp.SetListItemSubItemText(V.Local.sKey,1,V.ODBC.con!rst.FieldValTrim!SUFFIX)
+		Gui.F_Template.lvwTemp.SetListItemSubItemText(V.Local.sKey,2,V.ODBC.con!rst.FieldValTrim!SEQ)
+		Gui.F_Template.lvwTemp.SetListItemSubItemText(V.Local.sKey,3,V.ODBC.con!rst.FieldValTrim!WC)
+		F.Intrinsic.String.Build("Select DESCRIPTION from V_JOB_OPERATIONS_WC where JOB = '{0}' AND SUFFIX = '{1}' AND SEQ = '{2}'",V.ODBC.con!rst.FieldValTrim!JOB,V.ODBC.con!rst.FieldValTrim!SUFFIX,V.ODBC.con!rst.FieldValTrim!SEQ,V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRO("rstDesc",V.Local.sSql)
+	
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,<>,True)
+			Gui.F_Template.lvwTemp.SetListItemSubItemText(V.Local.sKey,4,V.ODBC.con!rstDesc.FieldValTrim!DESCRIPTION)
+		F.Intrinsic.Control.EndIf
+	
+		F.ODBC.con!rstDesc.Close
+		F.ODBC.con!rst.MoveNext
+	F.Intrinsic.Control.Loop
+	
+	F.ODBC.con!rst.Close
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.TempList.End
+
+Program.Sub.f_template_unload.Start
+'V_L_D
+f.Intrinsic.Control.Try
+	
+	Gui.F_Template..Visible(False)
+	Gui.F_Template.txtTmpJob.Text("")
+	Gui.F_Template.txtTmpSeq.Text("")
+	Gui.F_Template.txtTmpSuff.Text("")
+	
+	Gui.F_Timesheet..Enabled(True)
+	Gui.F_Timesheet..setfocus
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.f_template_unload.End
+
+Program.Sub.cmdTmpAddWC_Click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sSql.Declare
+	V.Local.sTitle.Declare
+	V.Local.sWidth.Declare
+	V.Local.sRet.Declare
+	
+	V.Local.sTitle.Set("Work Center*!*WC Name*!*WC Dept")
+	V.Local.sWidth.Set("1200*!*2700*!*1200")
+	V.Local.sSql.Set("Select MACHINE, WC_DEPT, WC_NAME from WORKCENTERS ORDER BY MACHINE, WC_DEPT")	
+	F.Intrinsic.String.Split(V.Local.sTitle,"*!*",V.Local.sTitle)
+	F.Intrinsic.String.Split(V.Local.sWidth,"*!*",V.Local.sWidth)	
+	F.Intrinsic.UI.Browser("Select WorkCenter","con",V.Local.sSql,V.Local.sTitle,V.Local.sWidth,8000,8000,V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_Template.txtTmpWC.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdTmpAddWC_Click.End
+
+Program.Sub.cmdtmpseqbrows_click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sSql.Declare
+	V.Local.sTitle.Declare
+	V.Local.sWidth.Declare
+	V.Local.sRet.Declare
+	V.Local.sWC.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.F_Template!txtTmpJob.Text.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("No job selected!","Select Job")
+	F.Intrinsic.Control.Else
+		V.Local.sTitle.Set("Sequence*!*Workcenter*!*Description")
+		V.Local.sWidth.Set("1200*!*1000*!*4800")		
+		F.Intrinsic.String.Split(V.Local.sTitle,"*!*",V.Local.sTitle)
+		F.Intrinsic.String.Split(V.Local.sWidth,"*!*",V.Local.sWidth)
+	
+		F.Intrinsic.String.Build("Select SEQ, PART, DESCRIPTION from V_JOB_OPERATIONS where JOB = '{0}' AND SUFFIX = '{1}' AND LMO = 'L' and SEQ < 995000 ORDER BY Job,Suffix,SEQ",V.Screen.F_Template!txtTmpJob.Text,V.Screen.F_Template!txtTmpSuff.Text,V.Local.sSql)
+		F.Intrinsic.UI.Browser("Select Sequence","con",V.Local.sSql,V.Local.sTitle,V.Local.sWidth,8000,8000,V.Local.sRet)
+	
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			V.Local.sWC.set(V.Local.sRet(1))
+			f.Intrinsic.String.Left(v.Local.sWC,4,v.Local.sWC)
+			Gui.F_Template.txtTmpSeq.Text(V.Local.sRet(0))
+			Gui.F_Template.txtTmpWC.Text(v.Local.sWC)
+		F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdtmpseqbrows_click.End
+
+Program.Sub.cmdtmpjobbrows_click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sRet.Declare
+	
+	F.Intrinsic.UI.Browser("Select Job","con","Select JOB, SUFFIX, PART, DESCRIPTION from V_JOB_HEADER ORDER BY JOB, SUFFIX","Job*!*Suffix*!*Part*!*Description","1200*!*700*!*2200*!*2700",8000,8000,V.Local.sRet)	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_Template.txtTmpJob.Text(V.Local.sRet(0))
+		Gui.F_Template.txtTmpSuff.Text(V.Local.sRet(1))
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdtmpjobbrows_click.End
+
+Program.Sub.cmdtmpadd_click.Start
+'V_L_D
+f.Intrinsic.Control.Try
+	V.Local.sSql.Declare
+	v.Local.iCheck.Declare
+	v.Local.iCheck1.Declare
+	v.Local.iCheck2.Declare
+	v.Local.sWC.Declare
+	v.Global.bSaveMsg.Set(False)
+	v.Local.sWC.Set(V.Screen.F_Template!txtTmpWC.text)
+	
+	f.Intrinsic.String.UCase(v.Local.sWC,v.Local.sWC)
+	F.Intrinsic.String.Build("Select count(JOB) from V_JOB_HEADER WHERE JOB = '{0}' AND SUFFIX = '{1}'",V.Screen.F_Template!txtTmpJob.Text,V.Screen.F_Template!txtTmpSuff.Text,V.Local.sSql)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,V.Local.iCheck)	
+	F.Intrinsic.String.Build("Select count(JOB) from V_JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQ = '{2}'",V.Screen.F_Template!txtTmpJob.text,V.Screen.F_Template!txtTmpSuff.text,V.Screen.F_Template!txtTmpSeq.Text,V.Local.sSql)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,V.Local.iCheck1)
+	F.Intrinsic.String.Build("Select count(MACHINE) from WORKCENTERS WHERE MACHINE = '{0}'",v.Local.sWC,V.Local.sSql)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSql,V.Local.iCheck2)
+	
+	F.Intrinsic.Control.If(V.Screen.F_Template!txtTmpJob.Text.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("No job selected to save!","Save Job")
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Template!txtTmpSeq.Text.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("No sequence selected to save!","Save Sequence")
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Template!txtTmpWC.Text.Trim,=,"")	
+		F.Intrinsic.UI.Msgbox("No Workcenter selected to save!","Save Work Center")
+	F.Intrinsic.Control.ElseIf(v.Local.iCheck,=,0)
+		F.Intrinsic.UI.Msgbox("Invalid Job and Suffix entered!","Incorrect Job or Suffix")
+	F.Intrinsic.Control.ElseIf(v.Local.iCheck1,=,0)
+		F.Intrinsic.UI.Msgbox("Invalid Sequence entered!","Incorrect Sequence")
+	F.Intrinsic.Control.ElseIf(v.Local.iCheck2,=,0)
+		F.Intrinsic.UI.Msgbox("Invalid Work Center entered!","Incorrect Work Center")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Select * from GCG_6796_TIMSHT_TEMP where rtrim(UPPER(USER_ID)) = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND SEQ = '{3}'",V.Global.sUser.Trim,V.Screen.F_Template!txtTmpJob.Text,V.Screen.F_Template!txtTmpSuff.Text,V.Screen.F_Template!txtTmpSeq.Text,V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)	
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+			F.ODBC.con!rst.AddNew
+			F.ODBC.con!rst.Set!USER_ID(V.Global.sUser)
+			F.ODBC.con!rst.Set!JOB(V.Screen.F_Template!txtTmpJob.Text)
+			F.ODBC.con!rst.Set!SUFFIX(V.Screen.F_Template!txtTmpSuff.Text)
+			F.ODBC.con!rst.Set!SEQ(V.Screen.F_Template!txtTmpSeq.Text)
+			F.ODBC.con!rst.Set!WC(V.Screen.F_Template!txtTmpWC.Text)
+			F.ODBC.con!rst.Update
+			Gui.F_Template.txtTmpJob.Text("")
+			Gui.F_Template.txtTmpSuff.Text("")
+			Gui.F_Template.txtTmpSeq.Text("")
+			Gui.F_Template.txtTmpWC.Text("")
+			F.ODBC.con!rst.Close
+			F.Intrinsic.Control.CallSub(Templist)
+		F.Intrinsic.Control.Else
+			F.ODBC.con!rst.Close
+			F.Intrinsic.UI.Msgbox("Job sequence already exists on template!","Sequence Exists")
+		F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdtmpadd_click.End
+
+Program.Sub.cmdtmpdelete_click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sSql.Declare
+	V.Local.sRet.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.F_Template!txtTmpJob.Text.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("No job selected to delete!","Delete Job")
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Template!txtTmpSeq.Text.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("No sequence selected to delete!","Delete Sequence")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("Are you sure you want to delete this record from template?","Delete Record",4,V.Local.sRet)
+		'Yes
+		F.Intrinsic.Control.If(V.Local.sRet,=,"6")
+			F.Intrinsic.String.Build("Delete from GCG_6796_TIMSHT_TEMP where rtrim(UPPER(USER_ID)) = '{0}' AND JOB = '{1}' AND SUFFIX = '{2}' AND SEQ = '{3}'",v.Global.sUser.Trim,V.Screen.F_Template!txtTmpJob.Text,V.Screen.F_Template!txtTmpSuff.Text,V.Screen.F_Template!txtTmpSeq.Text,V.Local.sSql)
+			F.ODBC.Connection!con.Execute(V.Local.sSql)
+			Gui.F_Template.txtTmpJob.Text("")
+			Gui.F_Template.txtTmpSuff.Text("")
+			Gui.F_Template.txtTmpSeq.Text("")
+			F.Intrinsic.Control.CallSub(Templist)
+		F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdtmpdelete_click.End
+
+Program.Sub.cmdtmpdeleteall_click.Start
+'V_L_D
+f.Intrinsic.Control.Try	
+	V.Local.sSql.Declare
+	V.Local.sRet.Declare
+	
+	F.Intrinsic.UI.Msgbox("This will delete your entire template, are you sure?","Delete Template",4,V.Local.sRet)
+	'Yes
+	F.Intrinsic.Control.If(V.Local.sRet,=,"6")
+		F.Intrinsic.String.Build("Delete GCG_6796_TIMSHT_TEMP where rtrim(UPPER(USER_ID)) = '{0}'",V.Global.sUser.Trim,V.Local.sSql)
+		F.ODBC.Connection!con.Execute(V.Local.sSql)
+		Gui.F_Template.txtTmpJob.Text("")
+		Gui.F_Template.txtTmpSuff.Text("")
+		Gui.F_Template.txtTmpSeq.Text("")
+		F.Intrinsic.Control.CallSub(Templist)
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdtmpdeleteall_click.End
+
+Program.Sub.lvwtemp_itemclick.Start
+'V_L_D
+'From F_Template form
+f.Intrinsic.Control.Try	
+	V.Local.sRet.Declare
+	
+	'Template Entries Screen, this sets the values of the textboxes to the values you selected in the grid
+	F.Intrinsic.String.Split(V.Screen.F_Template!lvwTemp.SelectedItemKey,"*!*",V.Local.sRet)
+	Gui.F_Template.txtTmpJob.Text(V.Local.sRet(0))
+	Gui.F_Template.txtTmpSuff.Text(V.Local.sRet(1))
+	Gui.F_Template.txtTmpSeq.Text(V.Local.sRet(2))
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.lvwtemp_itemclick.End
+
+'****************************************End Template**********************************
+
+'*****************Start Helper**************************************
+Program.Sub.Get_Time_From_Decimal.Start
+'V_L_D
+f.Intrinsic.Control.Try
+	v.Local.fValue.Declare
+	v.Local.iHour.Declare
+	v.Local.iMinute.Declare
+	v.Local.sMinute.Declare
+	v.Local.sTime.Declare
+
+	v.Local.fValue.Set(v.Args.fValue)
+	f.Intrinsic.Math.Floor(v.Local.fValue,v.Local.iHour)
+	f.Intrinsic.Math.Sub(v.Local.fValue,v.Local.iHour,v.Local.fValue)
+	f.Intrinsic.Math.Mult(v.Local.fValue,60,v.Local.fValue)
+	f.Intrinsic.Math.Round(v.Local.fValue,0,v.Local.iMinute)
+	f.Intrinsic.String.LPad(v.Local.iMinute,"0",2,v.Local.sMinute)
+	f.Intrinsic.String.Build("{0}:{1}",v.Local.iHour,v.Local.sMinute,v.Local.sTime)
+	f.Intrinsic.Variable.AddRV("sTime",v.Local.sTime)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Get_Time_From_Decimal.End
+
+Program.Sub.Get_Time_From_Normal.Start
+'V_L_D
+f.Intrinsic.Control.Try
+	v.Local.sValue.Declare
+	v.Local.sTime.Declare
+	
+	v.Local.sValue.Set(v.Args.sValue)
+	f.Intrinsic.String.Split(v.Local.sValue,":",v.Local.sValue)
+	f.Intrinsic.Math.Div(v.Local.sValue(1),60,v.Local.sTime)
+	f.Intrinsic.Math.Add(v.Local.sValue(0),v.Local.sTime,v.Local.sTime)
+	f.Intrinsic.String.Format(v.Local.sTime,"##.00",v.Local.sTime)
+	f.Intrinsic.Variable.AddRV("sTime",v.Local.sTime)
+			
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry				
+Program.Sub.Get_Time_From_Normal.End
+
+
+Program.Sub.Total_Normal_Hours.Start
+f.Intrinsic.Control.Try
+	v.Local.iCnt.Declare
+	v.Local.sCol.Declare
+	v.Local.iTotalHours.Declare
+	v.Local.iTotalMin.Declare
+	v.Local.sTime.Declare
+	v.Local.iHold.Declare
+	
+	v.Local.sCol.Set(v.Args.sColToCal)
+	
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.CompDT.RowCount--,1)
+		v.Local.sTime.Set(v.DataTable.CompDT(v.Local.iCnt).[v.Local.sCol]!FieldValTrim)
+		f.Intrinsic.Control.If(v.Local.sTime,<>,"")
+			f.Intrinsic.String.Split(v.Local.sTime,":",v.Local.sTime)
+			f.Intrinsic.Math.Add(v.Local.iTotalHours,v.Local.sTime(0),v.Local.iTotalHours)
+			f.Intrinsic.Math.Add(v.Local.iTotalMin,v.Local.sTime(1),v.Local.iTotalMin)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	f.Intrinsic.Math.IDiv(v.Local.iTotalMin,60,v.Local.iHold)
+	f.Intrinsic.Math.Add(v.Local.iHold,v.Local.iTotalHours,v.Local.iTotalHours)
+	f.Intrinsic.Math.Mod(v.Local.iTotalMin,60,v.Local.iHold)
+	f.Intrinsic.String.LPad(v.Local.iHold,"0",2,v.Local.sTime)
+	f.Intrinsic.String.Build("{0}:{1}",v.Local.iTotalHours,v.Local.sTime,v.Local.sTime)
+	
+	f.Intrinsic.Variable.AddRV("sTotalTime",v.Local.sTime)
+			
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry		
+Program.Sub.Total_Normal_Hours.End
+
+Program.Sub.Total_Normal_Time_Week.Start
+f.Intrinsic.Control.Try
+	v.Local.iCnt.Declare
+	v.Local.sCol.Declare
+	v.Local.iTotalHours.Declare
+	v.Local.iTotalMin.Declare
+	v.Local.sTime.Declare
+	v.Local.iHold.Declare
+	
+	v.Local.sCol.Set(v.Args.sColToCal)
+	
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.Global.sTime.UBound,1)
+		v.Local.sTime.Set(v.Global.sTime(v.Local.iCnt))
+		f.Intrinsic.Control.If(v.Local.sTime,<>,"")
+			f.Intrinsic.String.Split(v.Local.sTime,":",v.Local.sTime)
+			f.Intrinsic.Math.Add(v.Local.iTotalHours,v.Local.sTime(0),v.Local.iTotalHours)
+			f.Intrinsic.Math.Add(v.Local.iTotalMin,v.Local.sTime(1),v.Local.iTotalMin)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	f.Intrinsic.Math.IDiv(v.Local.iTotalMin,60,v.Local.iHold)
+	f.Intrinsic.Math.Add(v.Local.iHold,v.Local.iTotalHours,v.Local.iTotalHours)
+	f.Intrinsic.Math.Mod(v.Local.iTotalMin,60,v.Local.iHold)
+	f.Intrinsic.String.LPad(v.Local.iHold,"0",2,v.Local.sTime)
+	f.Intrinsic.String.Build("{0}:{1}",v.Local.iTotalHours,v.Local.sTime,v.Local.sTime)
+	
+	f.Intrinsic.Variable.AddRV("sTotalTimeWeek",v.Local.sTime)
+			
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Total_Normal_Time_Week.End
